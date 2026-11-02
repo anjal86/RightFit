@@ -58,7 +58,7 @@ require_once __DIR__ . "/includes/header.php";
               <!-- Two Column Clinical Breakdown -->
               <div class="clinical-columns">
                 <div class="clinical-col">
-                  <h4>📋 Key Assessments &amp; Reports</h4>
+                  <h4><i data-lucide="clipboard-list" aria-hidden="true"></i> Key Assessments &amp; Reports</h4>
                   <ul class="clinical-list">
                     <li><span class="check-mark"><i data-lucide="check"></i></span> <span>Comprehensive Functional Mobility &amp; Gait Analysis</span></li>
                     <li><span class="check-mark"><i data-lucide="check"></i></span> <span>Assistive Technology (AT) Prescriptions (Wheelchairs, Walkers)</span></li>
@@ -119,7 +119,7 @@ require_once __DIR__ . "/includes/header.php";
               <!-- Two Column Clinical Breakdown -->
               <div class="clinical-columns">
                 <div class="clinical-col">
-                  <h4>📋 Key Assessments &amp; Lodgements</h4>
+                  <h4><i data-lucide="clipboard-list" aria-hidden="true"></i> Key Assessments &amp; Lodgements</h4>
                   <ul class="clinical-list">
                     <li><span class="check-mark"><i data-lucide="check"></i></span> <span>Functional Behaviour Assessments (FBA) &amp; Root-Cause Analysis</span></li>
                     <li><span class="check-mark"><i data-lucide="check"></i></span> <span>Interim Behaviour Support Plans (developed &amp; lodged within 1 month)</span></li>
@@ -128,7 +128,7 @@ require_once __DIR__ . "/includes/header.php";
                   </ul>
                 </div>
                 <div class="clinical-col">
-                  <h4>🌱 Evidence-Based Interventions</h4>
+                  <h4><i data-lucide="sprout" aria-hidden="true"></i> Evidence-Based Interventions</h4>
                   <ul class="clinical-list">
                     <li><span class="check-mark"><i data-lucide="check"></i></span> <span>Proactive Environmental Modifications &amp; Calming Spaces</span></li>
                     <li><span class="check-mark"><i data-lucide="check"></i></span> <span>Coaching &amp; Upskilling for Support Workers, Carers, and Educators</span></li>
@@ -180,7 +180,7 @@ require_once __DIR__ . "/includes/header.php";
               <!-- Two Column Clinical Breakdown -->
               <div class="clinical-columns">
                 <div class="clinical-col">
-                  <h4>📋 Key Assessments &amp; Reports</h4>
+                  <h4><i data-lucide="clipboard-list" aria-hidden="true"></i> Key Assessments &amp; Reports</h4>
                   <ul class="clinical-list">
                     <li><span class="check-mark"><i data-lucide="check"></i></span> <span>Comprehensive Functional Capacity Assessments (FCA)</span></li>
                     <li><span class="check-mark"><i data-lucide="check"></i></span> <span>SIL &amp; SDA Housing Eligibility Assessment Reports</span></li>
@@ -189,7 +189,7 @@ require_once __DIR__ . "/includes/header.php";
                   </ul>
                 </div>
                 <div class="clinical-col">
-                  <h4>🙌 Direct Therapy &amp; Training</h4>
+                  <h4><i data-lucide="heart-handshake" aria-hidden="true"></i> Direct Therapy &amp; Training</h4>
                   <ul class="clinical-list">
                     <li><span class="check-mark"><i data-lucide="check"></i></span> <span>Activities of Daily Living (ADL) Training (cooking, hygiene)</span></li>
                     <li><span class="check-mark"><i data-lucide="check"></i></span> <span>Sensory Profiling &amp; Neuroaffirming Regulation Plans</span></li>
@@ -241,7 +241,7 @@ require_once __DIR__ . "/includes/header.php";
               <!-- Two Column Clinical Breakdown -->
               <div class="clinical-columns">
                 <div class="clinical-col">
-                  <h4>📋 Key Assessments &amp; Reports</h4>
+                  <h4><i data-lucide="clipboard-list" aria-hidden="true"></i> Key Assessments &amp; Reports</h4>
                   <ul class="clinical-list">
                     <li><span class="check-mark"><i data-lucide="check"></i></span> <span>Comprehensive Speech Sound &amp; Language Assessments</span></li>
                     <li><span class="check-mark"><i data-lucide="check"></i></span> <span>Clinical Dysphagia &amp; Safe Swallowing Assessments</span></li>
@@ -250,7 +250,7 @@ require_once __DIR__ . "/includes/header.php";
                   </ul>
                 </div>
                 <div class="clinical-col">
-                  <h4>💬 Direct Therapy &amp; Training</h4>
+                  <h4><i data-lucide="message-square" aria-hidden="true"></i> Direct Therapy &amp; Training</h4>
                   <ul class="clinical-list">
                     <li><span class="check-mark"><i data-lucide="check"></i></span> <span>AAC Setup &amp; Training (Proloquo2Go, TouchChat, Eye Gaze)</span></li>
                     <li><span class="check-mark"><i data-lucide="check"></i></span> <span>Receptive &amp; Expressive Language Development Interventions</span></li>
