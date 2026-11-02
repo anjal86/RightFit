@@ -19,11 +19,15 @@
       // Already played in full during this visit — dismiss immediately
       loader.remove();
     } else {
-      // Plays the full animation cycle once (2250ms = 125 frames at 18ms/frame)
-      const fullAnimationDuration = 2250;
+      // Give the existing animated artwork a longer, calmer on-screen presentation.
+      // This controls the overlay duration; GIF/WebP frame timing stays unchanged.
+      const fullAnimationDuration = 3600;
       const startTime = Date.now();
+      let dismissalScheduled = false;
 
       const dismissLoader = () => {
+        if (dismissalScheduled) return;
+        dismissalScheduled = true;
         const elapsed = Date.now() - startTime;
         const remaining = Math.max(0, fullAnimationDuration - elapsed);
 
@@ -34,16 +38,16 @@
           } catch (_) {}
           setTimeout(() => {
             if (loader.parentNode) loader.remove();
-          }, 550);
+          }, 850);
         }, remaining);
       };
 
       if (document.readyState === 'complete') {
         dismissLoader();
       } else {
-        window.addEventListener('load', dismissLoader);
+        window.addEventListener('load', dismissLoader, { once: true });
         // Safety failsafe timeout in case of network stall
-        setTimeout(dismissLoader, 3000);
+        setTimeout(dismissLoader, 5000);
       }
     }
   }

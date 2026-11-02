@@ -32,5 +32,10 @@ if((sv.match(/class="service-art-wrapper rf-service-media"/g)||[]).length!==4)fa
 for(const service of ['physiotherapy','behaviour-support','occupational-therapy','speech-pathology']) {
   if(!sv.includes('assets/'+service+'-art.webp'))failures.push('Missing brand artwork '+service);
 }
+const loaderJS=readFileSync('script.js','utf8');
+const loaderCSS=readFileSync('styles.css','utf8');
+if(!loaderJS.includes('fullAnimationDuration = 3600'))failures.push('Loading animation duration should be 3.6s');
+if(!loaderJS.includes('dismissalScheduled'))failures.push('Loader must not schedule duplicate dismissals');
+if(!loaderCSS.includes('opacity 0.8s'))failures.push('Loader fade timing should be 0.8s');
 if(failures.length){console.error(failures.join('\n'));process.exit(1)}
 console.log('PASS: Original client-review design and services, internal links, assets, preview SEO meta.');
