@@ -1,0 +1,29 @@
+# RightFit Allied Health — cPanel Apache Configuration
+# Enable Rewrite Engine
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Block access to protected directories and configuration
+    RewriteRule ^(data|includes|\.git) - [F,L]
+    RewriteRule ^(config\.php|composer\..*|package\..*) - [F,L]
+
+    # Clean URL support: /about -> /about.php
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}\.php -f
+    RewriteRule ^([^\.]+)$ $1.php [NC,L]
+</IfModule>
+
+# Security Headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Prevent directory indexing
+Options -Indexes
+
+# Set UTF-8 Default Charset
+AddDefaultCharset UTF-8

@@ -202,11 +202,12 @@
 
       feedback.className = 'form-feedback';
 
-      // Check if form has a valid remote endpoint (e.g., https://formspree.io/... or https://...)
-      const action = form.getAttribute('action');
-      const isRemoteEndpoint = action && action.startsWith('http') && !action.includes('example.com');
+      // Check if form has a valid endpoint (e.g., submit.php or custom URL)
+      const action = form.getAttribute('action') || 'submit.php';
+      const hasValidEndpoint = action && !action.includes('placeholder') && !action.includes('example.com');
 
-      if (isRemoteEndpoint) {
+      if (hasValidEndpoint) {
+        feedback.className = 'form-feedback';
         feedback.textContent = 'Submitting your information securely...';
         feedback.style.display = 'block';
 
@@ -214,19 +215,27 @@
           const res = await fetch(action, {
             method: 'POST',
             body: formData,
-            headers: { 'Accept': 'application/json' }
+            headers: {
+              'Accept': 'application/json',
+              'X-Requested-With': 'XMLHttpRequest'
+            }
           });
 
-          if (res.ok) {
+          const data = await res.json().catch(() => null);
+
+          if (res.ok && (!data || data.success !== false)) {
             feedback.className = 'form-feedback success';
-            feedback.innerHTML = '<strong>Thank you!</strong> Your submission has been received. Our clinical intake team will be in touch shortly.';
+            feedback.innerHTML = `<strong>Thank you!</strong> ${data && data.message ? data.message : 'Your submission has been received. Our clinical intake team will be in touch shortly.'}`;
             form.reset();
             return;
           } else {
-            throw new Error('Server returned error status');
+            const errorMsg = data && data.message ? data.message : 'There was an issue processing your submission.';
+            throw new Error(errorMsg);
           }
         } catch (err) {
-          console.warn('Endpoint submission failed or unconfigured, offering direct email/copy fallback.', err);
+          console.warn('Endpoint submission issue, providing error and fallback:', err);
+          feedback.className = 'form-feedback error';
+          feedback.innerHTML = `<strong>Submission issue:</strong> ${err.message || 'Could not reach server.'}<br>Please review your information, or use the direct options below:`;
         }
       }
 

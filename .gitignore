@@ -1,0 +1,11 @@
+# SQLite database files (preserved on server)
+data/*.sqlite
+data/*.sqlite-journal
+data/*.db
+
+# macOS files
+.DS_Store
+
+# Temporary files
+*.tmp
+*.log
