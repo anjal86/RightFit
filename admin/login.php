@@ -1,4 +1,5 @@
 <?php
+if (getenv('RIGHTFIT_ADMIN_ENABLED') !== '1' || strlen(getenv('RIGHTFIT_ADMIN_BOOTSTRAP_PASSWORD') ?: '') < 16) { http_response_code(503); header('Content-Type: text/plain; charset=utf-8'); exit('Admin login unavailable.'); }
 require_once __DIR__ . '/../config.php';
 require_once __DIR__ . '/../includes/db.php';
 require_once __DIR__ . '/../includes/auth.php';

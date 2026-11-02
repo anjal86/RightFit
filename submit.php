@@ -1,4 +1,5 @@
 <?php
+if (getenv('RIGHTFIT_INTAKE_ENABLED') !== '1') { http_response_code(503); header('Content-Type: application/json; charset=utf-8'); echo json_encode(['success'=>false,'message'=>'Online intake is not available.']); exit; }
 /**
  * RightFit Allied Health Services — Secure Submission Endpoint
  * Handles General Enquiries and Client Referrals.

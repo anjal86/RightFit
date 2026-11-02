@@ -1,8 +1,3 @@
-# robots.txt for RightFit Allied Health Services
-# https://www.rightfitalliedhealth.com.au/
-
 User-agent: *
 Allow: /
-
-Sitemap: https://www.rightfitalliedhealth.com.au/sitemap.xml
-
+# Preview pages use meta noindex until approved.
