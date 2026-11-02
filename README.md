@@ -22,3 +22,6 @@ Run `node tests/check-static.mjs` from the root. No dependencies needed.
 
 ## Client communication
 Always include Emmanuel in external project correspondence; add his verified email to CC. No correspondence is sent by this repository.
+
+### Security note
+Legacy administrator passwords were disclosed in earlier Git history. Any database installed under earlier versions must have its administrator account reset before enabling the prototype. The previous password is now explicitly rejected by the login code. HTTPS and a valid CSRF token are required by the intake endpoint even when explicitly enabled. These safeguards do not replace an independent health-data privacy/security review.

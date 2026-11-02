@@ -38,10 +38,9 @@ define('DB_MYSQL_USER', 'rightfit_user');
 define('DB_MYSQL_PASS', getenv('RIGHTFIT_DB_PASSWORD') ?: '');
 define('DB_MYSQL_CHARSET', 'utf8mb4');
 
-// 5. Default First-Time Admin Credentials
-// An administrator account is automatically provisioned if the database is fresh.
-// Username: admin
-// Password: RightFit2026!
+// 5. Secure one-time administrator bootstrap (environment only; never hard-code a password).
+// Set RIGHTFIT_ADMIN_BOOTSTRAP_PASSWORD to a new unique secret >=16 characters.
+// Existing database accounts are NOT automatically rotated.
 define('DEFAULT_ADMIN_USER', 'admin');
 define('DEFAULT_ADMIN_PASS', getenv('RIGHTFIT_ADMIN_BOOTSTRAP_PASSWORD') ?: '');
 

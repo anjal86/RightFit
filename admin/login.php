@@ -20,6 +20,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !$isLocked) {
     } else {
         $username = trim($_POST['username'] ?? '');
         $password = $_POST['password'] ?? '';
+    // Refuse the previously disclosed bootstrap credential even against a legacy database.
+    if (hash_equals('7955dc6110ffb441cd8ce78f24ead1c5a83329cf57c4b0974d7e796d5bf046b4', hash('sha256', $password))) { http_response_code(403); exit('An administrator password reset is required.'); }
 
         if (empty($username) || empty($password)) {
             $error = 'Please enter both username and password.';

@@ -1,0 +1,19 @@
+name: RightFit preview smoke tests
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+jobs:
+  check-static:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check preview pages and links
+        run: node tests/check-static.mjs
+      - name: Lint PHP source
+        run: |
+          for f in config.php submit.php index.php about.php services.php contact.php admin/*.php includes/*.php; do php -l "$f"; done

@@ -28,8 +28,15 @@ function sendResponse(bool $success, string $message, int $statusCode = 200, arr
 }
 
 // Only accept POST requests
+if (empty($_SERVER['HTTPS']) || $_SERVER['HTTPS'] === 'off') {
+    sendResponse(false, 'Secure HTTPS is required for submissions.', 503);
+}
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     sendResponse(false, 'Invalid request method.', 405);
+}
+
+if (!verifyCsrfToken($_POST['csrf_token'] ?? '')) {
+    sendResponse(false, 'Invalid security token.', 403);
 }
 
 // 1. Anti-Spam Honeypot Verification
