@@ -281,6 +281,41 @@ $submissions = $stmt->fetchAll();
     }
     .flash-alert.success { background: #eaf6ee; color: #1d6e38; border: 1px solid #cce8d4; }
     .flash-alert.error { background: #fdf2ef; color: #a13b22; border: 1px solid #f6cfc3; }
+
+    @media (max-width: 860px) {
+      .admin-nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+      .admin-links {
+        width: 100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+      .filter-card {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+      }
+      .filter-form {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .filter-form input, .filter-form select, .filter-form button {
+        width: 100%;
+      }
+    }
+    @media (max-width: 480px) {
+      .metrics-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>

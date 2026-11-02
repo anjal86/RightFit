@@ -165,6 +165,13 @@ $flash = getFlash();
       .data-grid { grid-template-columns: 1fr; }
       .dossier-card { padding: 24px; }
     }
+    @media (max-width: 600px) {
+      .admin-nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+    }
   </style>
 </head>
 <body>
