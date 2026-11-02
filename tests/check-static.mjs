@@ -3,8 +3,11 @@ import { resolve } from 'node:path';
 const pages=['index.html','about.html','services.html','contact.html'];
 const contents=Object.fromEntries(pages.map(p=>[p,readFileSync(p,'utf8')]));
 const failures=[];
+const photoCount=(html)=>(html.match(/images\.pexels\.com\/photos\//g)||[]).length;
 const emojis=/[\u{1F300}-\u{1FAFF}]/u;
 for(const [page,html] of Object.entries(contents)){
+  if(photoCount(html)<1)failures.push(page+': missing illustrative photography');
+  if(!html.includes('rf-brand-ribbon'))failures.push(page+': missing four-service brand strip');
   if(emojis.test(html))failures.push(page+': emoji must be replaced with vector icons');
   if(!html.includes('assets/lucide.min.js'))failures.push(page+': missing local Lucide icon runtime');
   if(!html.includes('name="robots" content="noindex, follow"'))failures.push(page+': no preview noindex');

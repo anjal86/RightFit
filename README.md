@@ -24,3 +24,7 @@ Confirmed phone/WhatsApp, business emails, opening hours, appointment availabili
 
 ### Communication
 Always CC Emmanuel on external project correspondence (when his email address is provided).
+
+
+## Photography update
+Illustrative stock photographs now appear across all four pages, alongside the four custom service illustrations. For sources, licensing, editorial caveats and approval requirements, see [PHOTO_CREDITS.md](PHOTO_CREDITS.md). Replace these with approved photographs of RightFit people and environments when available.
