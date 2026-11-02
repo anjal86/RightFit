@@ -7,47 +7,41 @@
 (function () {
   'use strict';
 
-  // 0. Initial Website Loader (Plays Full Animation Once Per Visit)
+  // 0. Play the original RightFit opening animation once per browsing session.
+  // Both animated image files are retimed to play a single 5.6s cycle.
   const loader = document.getElementById('site-loader');
   if (loader) {
-    const pageKey = 'rf_loader_seen_' + (window.location.pathname.replace(/\/$/, '') || 'index');
-    const urlParams = new URLSearchParams(window.location.search);
-    const forceReplay = urlParams.has('replay') || urlParams.has('loader');
-    const alreadySeen = sessionStorage.getItem(pageKey) === '1';
-
-    if (alreadySeen && !forceReplay) {
-      // Already played in full during this visit — dismiss immediately
+    const sessionKey = 'rf_loader_played_session';
+    let alreadyPlayed = false;
+    try { alreadyPlayed = window.sessionStorage.getItem(sessionKey) === '1'; } catch (_) {}
+    const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (alreadyPlayed || reduceMotion) {
       loader.remove();
     } else {
-      // Give the existing animated artwork a longer, calmer on-screen presentation.
-      // This controls the overlay duration; GIF/WebP frame timing stays unchanged.
-      const fullAnimationDuration = 3600;
-      const startTime = Date.now();
-      let dismissalScheduled = false;
-
-      const dismissLoader = () => {
-        if (dismissalScheduled) return;
-        dismissalScheduled = true;
-        const elapsed = Date.now() - startTime;
-        const remaining = Math.max(0, fullAnimationDuration - elapsed);
-
-        setTimeout(() => {
-          loader.classList.add('loaded');
-          try {
-            sessionStorage.setItem(pageKey, '1');
-          } catch (_) {}
-          setTimeout(() => {
-            if (loader.parentNode) loader.remove();
-          }, 850);
-        }, remaining);
+      // Mark it immediately: refreshes, navigation and history must not replay it.
+      try { window.sessionStorage.setItem(sessionKey, '1'); } catch (_) {}
+      const image = loader.querySelector('.loader-gif');
+      const cycleMs = 5600;
+      let scheduled = false;
+      const fadeAndRemove = () => {
+        loader.classList.add('loaded');
+        window.setTimeout(() => { if (loader.parentNode) loader.remove(); }, 850);
       };
-
-      if (document.readyState === 'complete') {
-        dismissLoader();
+      const startOnce = () => {
+        if (scheduled) return;
+        scheduled = true;
+        window.setTimeout(fadeAndRemove, cycleMs);
+      };
+      if (image) {
+        if (image.complete) startOnce();
+        else {
+          image.addEventListener('load', startOnce, { once: true });
+          image.addEventListener('error', fadeAndRemove, { once: true });
+          // A broken or stalled asset must not trap the visitor on a loading screen.
+          window.setTimeout(startOnce, 7000);
+        }
       } else {
-        window.addEventListener('load', dismissLoader, { once: true });
-        // Safety failsafe timeout in case of network stall
-        setTimeout(dismissLoader, 5000);
+        fadeAndRemove();
       }
     }
   }
