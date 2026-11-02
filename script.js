@@ -7,6 +7,35 @@
 (function () {
   'use strict';
 
+  // 0. Initial Website Loader (Accelerated GIF/WebP)
+  const loader = document.getElementById('site-loader');
+  if (loader) {
+    const isFirstVisit = !sessionStorage.getItem('rf_visited');
+    // Allow the accelerated animation to play through smoothly (~1.9s for first visit, 400ms for intra-session)
+    const minDisplayTime = isFirstVisit ? 1900 : 400;
+    const startTime = Date.now();
+
+    const hideLoader = () => {
+      const elapsed = Date.now() - startTime;
+      const remaining = Math.max(0, minDisplayTime - elapsed);
+      setTimeout(() => {
+        loader.classList.add('loaded');
+        sessionStorage.setItem('rf_visited', '1');
+        setTimeout(() => {
+          if (loader.parentNode) loader.remove();
+        }, 500);
+      }, remaining);
+    };
+
+    if (document.readyState === 'complete') {
+      hideLoader();
+    } else {
+      window.addEventListener('load', hideLoader);
+      // Failsafe timeout so the user is never stuck
+      setTimeout(hideLoader, 2800);
+    }
+  }
+
   // 1. Dynamic Copyright Year
   const yearEl = document.getElementById('year');
   if (yearEl) {
