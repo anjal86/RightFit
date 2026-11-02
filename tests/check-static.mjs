@@ -11,7 +11,8 @@ for(const [page,html] of Object.entries(contents)){
   for(const match of html.matchAll(/(?:href|src|srcset)="([^"]+)"/g)){
     const raw=match[1].replaceAll('&amp;','&').trim().split(/\s+/)[0];
     if(/^(?:https?:|data:|mailto:|tel:|javascript:)/.test(raw))continue;
-    const [file,hash]=raw.split('#');
+    const [rawPath,hash]=raw.split('#');
+    const file=rawPath.split('?')[0];
     if(file&&!existsSync(resolve(file)))failures.push(page+': missing local asset '+file);
     const target=contents[file]||contents[page];
     if(hash && !target.includes('id="'+hash+'"'))failures.push(page+': missing target '+raw);
