@@ -953,7 +953,6 @@ button {
   max-width: 95%;
   object-fit: contain;
   border-radius: 8px;
-  mix-blend-mode: multiply;
 }
 
 .service-card h3 {
@@ -1039,7 +1038,6 @@ button {
   width: 64%;
   position: relative;
   z-index: 1;
-  mix-blend-mode: multiply;
 }
 
 .halo {
@@ -1524,7 +1522,6 @@ button {
 
 .page-hero-stamp img {
   width: 76%;
-  mix-blend-mode: multiply;
 }
 
 /* Services Detail Page */
@@ -1582,7 +1579,6 @@ button {
   max-width: 72%;
   height: 72%;
   object-fit: contain;
-  mix-blend-mode: multiply;
 }
 
 .service-detail-number {
