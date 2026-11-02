@@ -16,7 +16,7 @@ require_once __DIR__ . "/includes/header.php";
             Empowering ability. Enabling independence. Thoughtful allied health support designed around your unique strengths, goals, and everyday life.
           </p>
           <div class="hero-buttons">
-            <a class="btn btn-copper" href="contact.php?type=referral">Make a Referral <span aria-hidden="true">↗</span></a>
+            <a class="btn btn-copper" href="contact.php?type=referral">Make a Referral <i data-lucide="arrow-up-right"></i></a>
             <a class="btn btn-outline" href="services.php">Explore our services</a>
           </div>
           <div class="hero-note">
@@ -60,28 +60,28 @@ require_once __DIR__ . "/includes/header.php";
     <section class="trust-strip" aria-label="Key Service Highlights">
       <div class="container trust-grid">
         <div class="trust-item">
-          <div class="trust-icon" aria-hidden="true">🩺</div>
+          <div class="trust-icon" aria-hidden="true"><i data-lucide="stethoscope"></i></div>
           <div>
             <h4>AHPRA &amp; SPA Registered</h4>
             <p>Qualified, vetted clinicians</p>
           </div>
         </div>
         <div class="trust-item">
-          <div class="trust-icon" aria-hidden="true">🤝</div>
+          <div class="trust-icon" aria-hidden="true"><i data-lucide="heart-handshake"></i></div>
           <div>
             <h4>NDIS Registered / Aligned</h4>
             <p>Plan &amp; self-managed welcome</p>
           </div>
         </div>
         <div class="trust-item">
-          <div class="trust-icon" aria-hidden="true">🏡</div>
+          <div class="trust-icon" aria-hidden="true"><i data-lucide="home"></i></div>
           <div>
             <h4>Mobile &amp; In-Home Visits</h4>
             <p>Support in natural settings</p>
           </div>
         </div>
         <div class="trust-item">
-          <div class="trust-icon" aria-hidden="true">⚡</div>
+          <div class="trust-icon" aria-hidden="true"><i data-lucide="zap"></i></div>
           <div>
             <h4>Prompt Intake &amp; Booking</h4>
             <p>Fast turnaround on referrals</p>
@@ -105,7 +105,7 @@ require_once __DIR__ . "/includes/header.php";
           <p class="supporting-copy">
             Our multidisciplinary team works collaboratively across Physiotherapy, Behaviour Support, Occupational Therapy, and Speech Pathology. We listen closely, respect your pace, and build practical strategies that foster lasting independence.
           </p>
-          <a class="inline-link" href="about.php">More about our philosophy &amp; team <span aria-hidden="true">↗</span></a>
+          <a class="inline-link" href="about.php">More about our philosophy &amp; team <i data-lucide="arrow-up-right"></i></a>
         </div>
       </div>
     </section>
@@ -128,7 +128,7 @@ require_once __DIR__ . "/includes/header.php";
           <article class="service-card physio">
             <div class="service-card-top">
               <span class="service-index">01 / MOVEMENT &amp; MOBILITY</span>
-              <a href="services.php#physiotherapy" class="circle-arrow" aria-label="Read more about Physiotherapy">↗</a>
+              <a href="services.php#physiotherapy" class="circle-arrow" aria-label="Read more about Physiotherapy"><i data-lucide="arrow-up-right"></i></a>
             </div>
             <div class="service-art">
               <picture>
@@ -147,7 +147,7 @@ require_once __DIR__ . "/includes/header.php";
           <article class="service-card behaviour">
             <div class="service-card-top">
               <span class="service-index">02 / POSITIVE SUPPORT</span>
-              <a href="services.php#behaviour-support" class="circle-arrow" aria-label="Read more about Behaviour Support">↗</a>
+              <a href="services.php#behaviour-support" class="circle-arrow" aria-label="Read more about Behaviour Support"><i data-lucide="arrow-up-right"></i></a>
             </div>
             <div class="service-art">
               <picture>
@@ -166,7 +166,7 @@ require_once __DIR__ . "/includes/header.php";
           <article class="service-card occupational">
             <div class="service-card-top">
               <span class="service-index">03 / EVERYDAY INDEPENDENCE</span>
-              <a href="services.php#occupational-therapy" class="circle-arrow" aria-label="Read more about Occupational Therapy">↗</a>
+              <a href="services.php#occupational-therapy" class="circle-arrow" aria-label="Read more about Occupational Therapy"><i data-lucide="arrow-up-right"></i></a>
             </div>
             <div class="service-art">
               <picture>
@@ -185,7 +185,7 @@ require_once __DIR__ . "/includes/header.php";
           <article class="service-card speech">
             <div class="service-card-top">
               <span class="service-index">04 / COMMUNICATION</span>
-              <a href="services.php#speech-pathology" class="circle-arrow" aria-label="Read more about Speech Pathology">↗</a>
+              <a href="services.php#speech-pathology" class="circle-arrow" aria-label="Read more about Speech Pathology"><i data-lucide="arrow-up-right"></i></a>
             </div>
             <div class="service-art">
               <picture>
@@ -216,22 +216,22 @@ require_once __DIR__ . "/includes/header.php";
 
         <div class="delivery-grid">
           <div class="delivery-card">
-            <div class="delivery-icon" aria-hidden="true">🏡</div>
+            <div class="delivery-icon" aria-hidden="true"><i data-lucide="home"></i></div>
             <h3>In-Home Visits</h3>
             <p>Therapy delivered in your living environment, making goals directly relevant to real routines and daily tasks.</p>
           </div>
           <div class="delivery-card">
-            <div class="delivery-icon" aria-hidden="true">🏫</div>
+            <div class="delivery-icon" aria-hidden="true"><i data-lucide="graduation-cap"></i></div>
             <h3>School &amp; Day Care</h3>
             <p>Collaborating with educators and support staff so strategies are consistently applied during learning and social times.</p>
           </div>
           <div class="delivery-card">
-            <div class="delivery-icon" aria-hidden="true">🏢</div>
+            <div class="delivery-icon" aria-hidden="true"><i data-lucide="building-2"></i></div>
             <h3>Clinic Consultations</h3>
             <p>Dedicated clinical spaces equipped with specialised assessment and therapy tools in welcoming environments.</p>
           </div>
           <div class="delivery-card">
-            <div class="delivery-icon" aria-hidden="true">💻</div>
+            <div class="delivery-icon" aria-hidden="true"><i data-lucide="video"></i></div>
             <h3>Telehealth Australia-Wide</h3>
             <p>Secure, convenient video consultations ensuring access to our experienced clinicians regardless of location.</p>
           </div>
@@ -279,7 +279,7 @@ require_once __DIR__ . "/includes/header.php";
               </div>
             </div>
           </div>
-          <a class="inline-link" href="about.php">Explore our philosophy &amp; standards <span aria-hidden="true">↗</span></a>
+          <a class="inline-link" href="about.php">Explore our philosophy &amp; standards <i data-lucide="arrow-up-right"></i></a>
         </div>
       </div>
     </section>
@@ -312,19 +312,19 @@ require_once __DIR__ . "/includes/header.php";
         <div class="steps-grid">
           <div class="step">
             <span class="step-number">01</span>
-            <div class="step-drawing" aria-hidden="true">✦</div>
+            <div class="step-drawing" aria-hidden="true"><i data-lucide="file-text"></i></div>
             <h3>Submit a referral</h3>
             <p>Complete our quick online referral form or contact us directly with the support areas needed.</p>
           </div>
           <div class="step">
             <span class="step-number">02</span>
-            <div class="step-drawing" aria-hidden="true">◎</div>
+            <div class="step-drawing" aria-hidden="true"><i data-lucide="user-check"></i></div>
             <h3>Intake consultation</h3>
             <p>We review the referral, discuss priorities, confirm funding, and match you with the right clinician.</p>
           </div>
           <div class="step">
             <span class="step-number">03</span>
-            <div class="step-drawing" aria-hidden="true">↗</div>
+            <div class="step-drawing" aria-hidden="true"><i data-lucide="activity"></i></div>
             <h3>Begin your therapy plan</h3>
             <p>Your clinician conducts the initial assessment and co-creates a goal-oriented support plan.</p>
           </div>
@@ -394,8 +394,8 @@ require_once __DIR__ . "/includes/header.php";
             <h2>Ready to find the right fit?</h2>
             <p>Our team is here to answer your questions, explore support options, and start your journey.</p>
             <div class="cta-buttons">
-              <a class="btn btn-copper" href="contact.php?type=referral">Make a Referral <span aria-hidden="true">↗</span></a>
-              <a class="btn btn-dark" href="contact.php">General Enquiry <span aria-hidden="true">↗</span></a>
+              <a class="btn btn-copper" href="contact.php?type=referral">Make a Referral <i data-lucide="arrow-up-right"></i></a>
+              <a class="btn btn-dark" href="contact.php">General Enquiry <i data-lucide="arrow-up-right"></i></a>
             </div>
           </div>
           <div class="cta-illustration" aria-hidden="true">

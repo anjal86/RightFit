@@ -44,7 +44,7 @@ require_once __DIR__ . "/includes/header.php";
           </p>
 
           <div class="info-row">
-            <span class="info-symbol" aria-hidden="true">📞</span>
+            <span class="info-symbol" aria-hidden="true"><i data-lucide="phone"></i></span>
             <div>
               <h3>Telephone</h3>
               <p><a href="tel:1300000000">1300 RIGHTFIT (1300 000 000)</a></p>
@@ -53,7 +53,7 @@ require_once __DIR__ . "/includes/header.php";
           </div>
 
           <div class="info-row">
-            <span class="info-symbol" aria-hidden="true">✉️</span>
+            <span class="info-symbol" aria-hidden="true"><i data-lucide="mail"></i></span>
             <div>
               <h3>Email Enquiries</h3>
               <p><a href="mailto:enquiries@rightfitalliedhealth.com.au">enquiries@rightfitalliedhealth.com.au</a></p>
@@ -62,7 +62,7 @@ require_once __DIR__ . "/includes/header.php";
           </div>
 
           <div class="info-row">
-            <span class="info-symbol" aria-hidden="true">📍</span>
+            <span class="info-symbol" aria-hidden="true"><i data-lucide="map-pin"></i></span>
             <div>
               <h3>Service Locations</h3>
               <p>Mobile in-home, school &amp; community visits across regional &amp; metropolitan areas.</p>
@@ -71,7 +71,7 @@ require_once __DIR__ . "/includes/header.php";
           </div>
 
           <div class="info-row">
-            <span class="info-symbol" aria-hidden="true">⚡</span>
+            <span class="info-symbol" aria-hidden="true"><i data-lucide="clock"></i></span>
             <div>
               <h3>Intake Turnaround</h3>
               <p>Referrals are reviewed and acknowledged within 1–2 business days by our intake team.</p>
@@ -79,7 +79,7 @@ require_once __DIR__ . "/includes/header.php";
           </div>
 
           <div class="contact-privacy">
-            <strong>🔒 Australian Privacy Principles (APP) Commitment</strong>
+            <strong><i data-lucide="shield-check" style="color: var(--forest); vertical-align: -0.15em;"></i> Australian Privacy Principles (APP) Commitment</strong>
             <p>
               We treat all health data in strict accordance with the Privacy Act 1988. Information submitted via this portal is handled securely and solely for clinical intake and service assessment.
             </p>
@@ -143,7 +143,7 @@ require_once __DIR__ . "/includes/header.php";
               </label>
 
               <div class="form-actions">
-                <button class="btn btn-copper" type="submit">Submit Enquiry ↗</button>
+                <button class="btn btn-copper" type="submit">Submit Enquiry <i data-lucide="arrow-up-right"></i></button>
               </div>
 
               <div class="form-feedback" id="enquiry-feedback" role="status" aria-live="polite"></div>
@@ -283,7 +283,7 @@ require_once __DIR__ . "/includes/header.php";
               </label>
 
               <div class="form-actions">
-                <button class="btn btn-copper" type="submit">Submit Participant Referral ↗</button>
+                <button class="btn btn-copper" type="submit">Submit Participant Referral <i data-lucide="arrow-up-right"></i></button>
               </div>
 
               <div class="form-feedback" id="referral-feedback" role="status" aria-live="polite"></div>

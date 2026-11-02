@@ -60,19 +60,19 @@ require_once __DIR__ . "/includes/header.php";
                 <div class="clinical-col">
                   <h4>📋 Key Assessments &amp; Reports</h4>
                   <ul class="clinical-list">
-                    <li><span class="check-mark">✓</span> <span>Comprehensive Functional Mobility &amp; Gait Analysis</span></li>
-                    <li><span class="check-mark">✓</span> <span>Assistive Technology (AT) Prescriptions (Wheelchairs, Walkers)</span></li>
-                    <li><span class="check-mark">✓</span> <span>Falls Risk, Balance &amp; Postural Alignment Assessments</span></li>
-                    <li><span class="check-mark">✓</span> <span>Detailed NDIS Review &amp; Plan Reassessment Reports</span></li>
+                    <li><span class="check-mark"><i data-lucide="check"></i></span> <span>Comprehensive Functional Mobility &amp; Gait Analysis</span></li>
+                    <li><span class="check-mark"><i data-lucide="check"></i></span> <span>Assistive Technology (AT) Prescriptions (Wheelchairs, Walkers)</span></li>
+                    <li><span class="check-mark"><i data-lucide="check"></i></span> <span>Falls Risk, Balance &amp; Postural Alignment Assessments</span></li>
+                    <li><span class="check-mark"><i data-lucide="check"></i></span> <span>Detailed NDIS Review &amp; Plan Reassessment Reports</span></li>
                   </ul>
                 </div>
                 <div class="clinical-col">
-                  <h4>🩺 Therapeutic Interventions</h4>
+                  <h4><i data-lucide="activity"></i> Therapeutic Interventions</h4>
                   <ul class="clinical-list">
-                    <li><span class="check-mark">✓</span> <span>Neurological Rehabilitation (Cerebral Palsy, Stroke, MS)</span></li>
-                    <li><span class="check-mark">✓</span> <span>Aquatic Physiotherapy (Hydrotherapy) &amp; Pool Programs</span></li>
-                    <li><span class="check-mark">✓</span> <span>Strength, Conditioning &amp; Motor Milestone Programs</span></li>
-                    <li><span class="check-mark">✓</span> <span>Chest Physiotherapy &amp; Respiratory Care Protocols</span></li>
+                    <li><span class="check-mark"><i data-lucide="check"></i></span> <span>Neurological Rehabilitation (Cerebral Palsy, Stroke, MS)</span></li>
+                    <li><span class="check-mark"><i data-lucide="check"></i></span> <span>Aquatic Physiotherapy (Hydrotherapy) &amp; Pool Programs</span></li>
+                    <li><span class="check-mark"><i data-lucide="check"></i></span> <span>Strength, Conditioning &amp; Motor Milestone Programs</span></li>
+                    <li><span class="check-mark"><i data-lucide="check"></i></span> <span>Chest Physiotherapy &amp; Respiratory Care Protocols</span></li>
                   </ul>
                 </div>
               </div>
@@ -80,8 +80,8 @@ require_once __DIR__ . "/includes/header.php";
               <!-- Action Bar -->
               <div class="service-action-bar">
                 <div class="service-action-buttons">
-                  <a class="btn btn-copper btn-small" href="contact.php?service=physiotherapy&amp;type=referral">Refer for Physiotherapy ↗</a>
-                  <a class="btn btn-outline btn-small" href="contact.php?service=physiotherapy">General Enquiry ↗</a>
+                  <a class="btn btn-copper btn-small" href="contact.php?service=physiotherapy&amp;type=referral">Refer for Physiotherapy <i data-lucide="arrow-up-right"></i></a>
+                  <a class="btn btn-outline btn-small" href="contact.php?service=physiotherapy">General Enquiry <i data-lucide="arrow-up-right"></i></a>
                 </div>
                 <div class="turnaround-pill">
                   <span class="badge-dot" aria-hidden="true"></span> Prompt Intake: Referrals reviewed within 1–2 business days
@@ -121,19 +121,19 @@ require_once __DIR__ . "/includes/header.php";
                 <div class="clinical-col">
                   <h4>📋 Key Assessments &amp; Lodgements</h4>
                   <ul class="clinical-list">
-                    <li><span class="check-mark">✓</span> <span>Functional Behaviour Assessments (FBA) &amp; Root-Cause Analysis</span></li>
-                    <li><span class="check-mark">✓</span> <span>Interim Behaviour Support Plans (developed &amp; lodged within 1 month)</span></li>
-                    <li><span class="check-mark">✓</span> <span>Comprehensive Behaviour Support Plans (lodged within 6 months)</span></li>
-                    <li><span class="check-mark">✓</span> <span>Restrictive Practice Elimination &amp; Human Rights Reviews</span></li>
+                    <li><span class="check-mark"><i data-lucide="check"></i></span> <span>Functional Behaviour Assessments (FBA) &amp; Root-Cause Analysis</span></li>
+                    <li><span class="check-mark"><i data-lucide="check"></i></span> <span>Interim Behaviour Support Plans (developed &amp; lodged within 1 month)</span></li>
+                    <li><span class="check-mark"><i data-lucide="check"></i></span> <span>Comprehensive Behaviour Support Plans (lodged within 6 months)</span></li>
+                    <li><span class="check-mark"><i data-lucide="check"></i></span> <span>Restrictive Practice Elimination &amp; Human Rights Reviews</span></li>
                   </ul>
                 </div>
                 <div class="clinical-col">
                   <h4>🌱 Evidence-Based Interventions</h4>
                   <ul class="clinical-list">
-                    <li><span class="check-mark">✓</span> <span>Proactive Environmental Modifications &amp; Calming Spaces</span></li>
-                    <li><span class="check-mark">✓</span> <span>Coaching &amp; Upskilling for Support Workers, Carers, and Educators</span></li>
-                    <li><span class="check-mark">✓</span> <span>Emotional Regulation, Coping Tools &amp; Sensory Strategies</span></li>
-                    <li><span class="check-mark">✓</span> <span>Safe Crisis De-escalation Plans (Non-aversive Techniques)</span></li>
+                    <li><span class="check-mark"><i data-lucide="check"></i></span> <span>Proactive Environmental Modifications &amp; Calming Spaces</span></li>
+                    <li><span class="check-mark"><i data-lucide="check"></i></span> <span>Coaching &amp; Upskilling for Support Workers, Carers, and Educators</span></li>
+                    <li><span class="check-mark"><i data-lucide="check"></i></span> <span>Emotional Regulation, Coping Tools &amp; Sensory Strategies</span></li>
+                    <li><span class="check-mark"><i data-lucide="check"></i></span> <span>Safe Crisis De-escalation Plans (Non-aversive Techniques)</span></li>
                   </ul>
                 </div>
               </div>
@@ -141,8 +141,8 @@ require_once __DIR__ . "/includes/header.php";
               <!-- Action Bar -->
               <div class="service-action-bar">
                 <div class="service-action-buttons">
-                  <a class="btn btn-copper btn-small" href="contact.php?service=behaviour-support&amp;type=referral">Refer for Behaviour Support ↗</a>
-                  <a class="btn btn-outline btn-small" href="contact.php?service=behaviour-support">General Enquiry ↗</a>
+                  <a class="btn btn-copper btn-small" href="contact.php?service=behaviour-support&amp;type=referral">Refer for Behaviour Support <i data-lucide="arrow-up-right"></i></a>
+                  <a class="btn btn-outline btn-small" href="contact.php?service=behaviour-support">General Enquiry <i data-lucide="arrow-up-right"></i></a>
                 </div>
                 <div class="turnaround-pill">
                   <span class="badge-dot" aria-hidden="true"></span> NDIS Line Items: 11_022_0110_7_3 &amp; 11_023_0110_7_3
@@ -182,19 +182,19 @@ require_once __DIR__ . "/includes/header.php";
                 <div class="clinical-col">
                   <h4>📋 Key Assessments &amp; Reports</h4>
                   <ul class="clinical-list">
-                    <li><span class="check-mark">✓</span> <span>Comprehensive Functional Capacity Assessments (FCA)</span></li>
-                    <li><span class="check-mark">✓</span> <span>SIL &amp; SDA Housing Eligibility Assessment Reports</span></li>
-                    <li><span class="check-mark">✓</span> <span>Complex &amp; Minor Home Modification (CHM/MHM) Prescriptions</span></li>
-                    <li><span class="check-mark">✓</span> <span>Assistive Technology (AT) Assessment &amp; Trial Reports</span></li>
+                    <li><span class="check-mark"><i data-lucide="check"></i></span> <span>Comprehensive Functional Capacity Assessments (FCA)</span></li>
+                    <li><span class="check-mark"><i data-lucide="check"></i></span> <span>SIL &amp; SDA Housing Eligibility Assessment Reports</span></li>
+                    <li><span class="check-mark"><i data-lucide="check"></i></span> <span>Complex &amp; Minor Home Modification (CHM/MHM) Prescriptions</span></li>
+                    <li><span class="check-mark"><i data-lucide="check"></i></span> <span>Assistive Technology (AT) Assessment &amp; Trial Reports</span></li>
                   </ul>
                 </div>
                 <div class="clinical-col">
                   <h4>🙌 Direct Therapy &amp; Training</h4>
                   <ul class="clinical-list">
-                    <li><span class="check-mark">✓</span> <span>Activities of Daily Living (ADL) Training (cooking, hygiene)</span></li>
-                    <li><span class="check-mark">✓</span> <span>Sensory Profiling &amp; Neuroaffirming Regulation Plans</span></li>
-                    <li><span class="check-mark">✓</span> <span>Fine Motor, Handwriting &amp; Executive Function Development</span></li>
-                    <li><span class="check-mark">✓</span> <span>Ergonomic Seating, Pressure Care &amp; Transfer Strategies</span></li>
+                    <li><span class="check-mark"><i data-lucide="check"></i></span> <span>Activities of Daily Living (ADL) Training (cooking, hygiene)</span></li>
+                    <li><span class="check-mark"><i data-lucide="check"></i></span> <span>Sensory Profiling &amp; Neuroaffirming Regulation Plans</span></li>
+                    <li><span class="check-mark"><i data-lucide="check"></i></span> <span>Fine Motor, Handwriting &amp; Executive Function Development</span></li>
+                    <li><span class="check-mark"><i data-lucide="check"></i></span> <span>Ergonomic Seating, Pressure Care &amp; Transfer Strategies</span></li>
                   </ul>
                 </div>
               </div>
@@ -202,8 +202,8 @@ require_once __DIR__ . "/includes/header.php";
               <!-- Action Bar -->
               <div class="service-action-bar">
                 <div class="service-action-buttons">
-                  <a class="btn btn-copper btn-small" href="contact.php?service=occupational-therapy&amp;type=referral">Refer for Occupational Therapy ↗</a>
-                  <a class="btn btn-outline btn-small" href="contact.php?service=occupational-therapy">General Enquiry ↗</a>
+                  <a class="btn btn-copper btn-small" href="contact.php?service=occupational-therapy&amp;type=referral">Refer for Occupational Therapy <i data-lucide="arrow-up-right"></i></a>
+                  <a class="btn btn-outline btn-small" href="contact.php?service=occupational-therapy">General Enquiry <i data-lucide="arrow-up-right"></i></a>
                 </div>
                 <div class="turnaround-pill">
                   <span class="badge-dot" aria-hidden="true"></span> Prompt Intake: Capacity for FCA reports &amp; ongoing therapy
@@ -243,19 +243,19 @@ require_once __DIR__ . "/includes/header.php";
                 <div class="clinical-col">
                   <h4>📋 Key Assessments &amp; Reports</h4>
                   <ul class="clinical-list">
-                    <li><span class="check-mark">✓</span> <span>Comprehensive Speech Sound &amp; Language Assessments</span></li>
-                    <li><span class="check-mark">✓</span> <span>Clinical Dysphagia &amp; Safe Swallowing Assessments</span></li>
-                    <li><span class="check-mark">✓</span> <span>NDIS Mealtime Management Plans (MMPs) &amp; Protocols</span></li>
-                    <li><span class="check-mark">✓</span> <span>High &amp; Low-Tech AAC Device Evaluations &amp; Trials</span></li>
+                    <li><span class="check-mark"><i data-lucide="check"></i></span> <span>Comprehensive Speech Sound &amp; Language Assessments</span></li>
+                    <li><span class="check-mark"><i data-lucide="check"></i></span> <span>Clinical Dysphagia &amp; Safe Swallowing Assessments</span></li>
+                    <li><span class="check-mark"><i data-lucide="check"></i></span> <span>NDIS Mealtime Management Plans (MMPs) &amp; Protocols</span></li>
+                    <li><span class="check-mark"><i data-lucide="check"></i></span> <span>High &amp; Low-Tech AAC Device Evaluations &amp; Trials</span></li>
                   </ul>
                 </div>
                 <div class="clinical-col">
                   <h4>💬 Direct Therapy &amp; Training</h4>
                   <ul class="clinical-list">
-                    <li><span class="check-mark">✓</span> <span>AAC Setup &amp; Training (Proloquo2Go, TouchChat, Eye Gaze)</span></li>
-                    <li><span class="check-mark">✓</span> <span>Receptive &amp; Expressive Language Development Interventions</span></li>
-                    <li><span class="check-mark">✓</span> <span>Social Communication, Self-Advocacy &amp; Pragmatics</span></li>
-                    <li><span class="check-mark">✓</span> <span>Mealtime Texture Modification &amp; Safe Feeding Coaching</span></li>
+                    <li><span class="check-mark"><i data-lucide="check"></i></span> <span>AAC Setup &amp; Training (Proloquo2Go, TouchChat, Eye Gaze)</span></li>
+                    <li><span class="check-mark"><i data-lucide="check"></i></span> <span>Receptive &amp; Expressive Language Development Interventions</span></li>
+                    <li><span class="check-mark"><i data-lucide="check"></i></span> <span>Social Communication, Self-Advocacy &amp; Pragmatics</span></li>
+                    <li><span class="check-mark"><i data-lucide="check"></i></span> <span>Mealtime Texture Modification &amp; Safe Feeding Coaching</span></li>
                   </ul>
                 </div>
               </div>
@@ -263,8 +263,8 @@ require_once __DIR__ . "/includes/header.php";
               <!-- Action Bar -->
               <div class="service-action-bar">
                 <div class="service-action-buttons">
-                  <a class="btn btn-copper btn-small" href="contact.php?service=speech-pathology&amp;type=referral">Refer for Speech Pathology ↗</a>
-                  <a class="btn btn-outline btn-small" href="contact.php?service=speech-pathology">General Enquiry ↗</a>
+                  <a class="btn btn-copper btn-small" href="contact.php?service=speech-pathology&amp;type=referral">Refer for Speech Pathology <i data-lucide="arrow-up-right"></i></a>
+                  <a class="btn btn-outline btn-small" href="contact.php?service=speech-pathology">General Enquiry <i data-lucide="arrow-up-right"></i></a>
                 </div>
                 <div class="turnaround-pill">
                   <span class="badge-dot" aria-hidden="true"></span> Rapid Turnaround: Mealtime Management Plans &amp; AAC Trials
@@ -328,28 +328,28 @@ require_once __DIR__ . "/includes/header.php";
     <section class="trust-strip" aria-label="Clinical Governance Overview">
       <div class="container trust-grid">
         <div class="trust-item">
-          <div class="trust-icon" aria-hidden="true">🛡️</div>
+          <div class="trust-icon" aria-hidden="true"><i data-lucide="shield-check"></i></div>
           <div>
             <h4>AHPRA &amp; SPA Registered</h4>
             <p>Adhering to National Registration standards</p>
           </div>
         </div>
         <div class="trust-item">
-          <div class="trust-icon" aria-hidden="true">📋</div>
+          <div class="trust-icon" aria-hidden="true"><i data-lucide="file-check-2"></i></div>
           <div>
             <h4>NDIS Commission Aligned</h4>
             <p>Strict worker screening &amp; safeguarding</p>
           </div>
         </div>
         <div class="trust-item">
-          <div class="trust-icon" aria-hidden="true">🚗</div>
+          <div class="trust-icon" aria-hidden="true"><i data-lucide="car"></i></div>
           <div>
             <h4>Mobile Across Australia</h4>
             <p>Therapy where you live, learn, and play</p>
           </div>
         </div>
         <div class="trust-item">
-          <div class="trust-icon" aria-hidden="true">💻</div>
+          <div class="trust-icon" aria-hidden="true"><i data-lucide="video"></i></div>
           <div>
             <h4>Nationwide Telehealth</h4>
             <p>Access our experienced clinicians anywhere</p>
@@ -430,8 +430,8 @@ require_once __DIR__ . "/includes/header.php";
             <h2>Let's connect you with the right clinician.</h2>
             <p>Our clinical intake coordinators are ready to match your goals with our qualified therapists across Australia.</p>
             <div class="cta-buttons">
-              <a class="btn btn-copper" href="contact.php?type=referral">Submit a Client Referral ↗</a>
-              <a class="btn btn-dark" href="contact.php">General Enquiry ↗</a>
+              <a class="btn btn-copper" href="contact.php?type=referral">Submit a Client Referral <i data-lucide="arrow-up-right"></i></a>
+              <a class="btn btn-dark" href="contact.php">General Enquiry <i data-lucide="arrow-up-right"></i></a>
             </div>
           </div>
           <div class="cta-illustration" aria-hidden="true">

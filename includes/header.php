@@ -127,8 +127,8 @@ function navAria(string $page, string $current): string {
         <span class="top-bar-tag">In-Home, School &amp; Telehealth Available</span>
       </div>
       <div class="top-bar-right">
-        <a href="tel:1300000000" aria-label="Call RightFit Allied Health Services on 1300 000 000">📞 1300 RIGHTFIT</a>
-        <a href="contact.php?type=referral" class="top-bar-referral">Make a Referral ↗</a>
+        <a href="tel:1300000000" aria-label="Call RightFit Allied Health Services on 1300 000 000"><i data-lucide="phone"></i> 1300 RIGHTFIT</a>
+        <a href="contact.php?type=referral" class="top-bar-referral">Make a Referral <i data-lucide="arrow-up-right"></i></a>
       </div>
     </div>
   </div>
@@ -152,7 +152,7 @@ function navAria(string $page, string $current): string {
 
       <div class="header-actions">
         <a class="btn btn-small btn-outline desktop-cta" href="contact.php">General Enquiry</a>
-        <a class="btn btn-small btn-copper desktop-cta" href="contact.php?type=referral">Make a Referral ↗</a>
+        <a class="btn btn-small btn-copper desktop-cta" href="contact.php?type=referral">Make a Referral <i data-lucide="arrow-up-right"></i></a>
         <button class="menu-button" id="menu-button" aria-label="Open navigation" aria-controls="mobile-nav" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -165,8 +165,8 @@ function navAria(string $page, string $current): string {
       <a class="<?= navClass('about', $currentPage) ?>" href="about.php"<?= navAria('about', $currentPage) ?>>About us</a>
       <a class="<?= navClass('services', $currentPage) ?>" href="services.php"<?= navAria('services', $currentPage) ?>>Our services</a>
       <a class="<?= navClass('contact', $currentPage) ?>" href="contact.php"<?= navAria('contact', $currentPage) ?>>Contact &amp; Referrals</a>
-      <a class="btn btn-copper mobile-nav-cta" href="contact.php?type=referral">Make a Referral ↗</a>
-      <a class="btn btn-light mobile-nav-cta" href="tel:1300000000">📞 Call 1300 RIGHTFIT</a>
+      <a class="btn btn-copper mobile-nav-cta" href="contact.php?type=referral">Make a Referral <i data-lucide="arrow-up-right"></i></a>
+      <a class="btn btn-light mobile-nav-cta" href="tel:1300000000"><i data-lucide="phone"></i> Call 1300 RIGHTFIT</a>
     </nav>
   </header>
 

@@ -111,7 +111,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <span style="font-weight: 700; font-size: 15px;">Admin Settings</span>
       </div>
       <div>
-        <a href="index.php" style="color: #cfded9; font-size: 13px;">← Return to Dashboard</a>
+        <a href="index.php" style="color: #cfded9; font-size: 13px; display: inline-flex; align-items: center; gap: 4px;"><i data-lucide="arrow-left" style="width: 14px; height: 14px;"></i> Return to Dashboard</a>
       </div>
     </div>
   </header>
@@ -148,7 +148,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <input type="password" id="confirm_password" name="confirm_password" required minlength="8">
           </div>
 
-          <button type="submit" class="btn btn-copper" style="width: 100%; margin-top: 10px;">Update Password ↗</button>
+          <button type="submit" class="btn btn-copper" style="width: 100%; margin-top: 10px;">Update Password <i data-lucide="lock" style="width: 14px; height: 14px;"></i></button>
         </form>
 
         <div style="margin-top: 24px; text-align: center;">
@@ -157,6 +157,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </div>
     </div>
   </main>
+
+  <script src="../assets/lucide.min.js"></script>
+  <script>
+    if (typeof lucide !== 'undefined') {
+      lucide.createIcons();
+    }
+  </script>
 </body>
 </html>
 

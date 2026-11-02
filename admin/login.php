@@ -192,15 +192,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !$isLocked) {
             <input type="password" id="password" name="password" required autocomplete="current-password">
           </div>
 
-          <button type="submit" class="btn btn-copper login-btn">Log In to Dashboard ↗</button>
+          <button type="submit" class="btn btn-copper login-btn">Log In to Dashboard <i data-lucide="arrow-right"></i></button>
         </form>
       <?php endif; ?>
 
       <div class="login-footer">
-        <a href="../index.php">← Return to Main Website</a>
+        <a href="../index.php" style="display: inline-flex; align-items: center; gap: 4px;"><i data-lucide="arrow-left" style="width: 14px; height: 14px;"></i> Return to Main Website</a>
       </div>
     </div>
   </div>
+
+  <script src="../assets/lucide.min.js"></script>
+  <script>
+    if (typeof lucide !== 'undefined') {
+      lucide.createIcons();
+    }
+  </script>
 </body>
 </html>
 

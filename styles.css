@@ -2346,3 +2346,113 @@ button {
     animation-duration: 0.01ms !important;
   }
 }
+
+/* Lucide Icons Integration */
+.lucide, [data-lucide] {
+  width: 1.15em;
+  height: 1.15em;
+  display: inline-block;
+  vertical-align: -0.18em;
+  stroke-width: 2;
+  stroke: currentColor;
+  fill: none;
+  transition: transform var(--transition-fast), stroke var(--transition-fast);
+}
+
+.trust-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+}
+.trust-icon .lucide {
+  width: 28px;
+  height: 28px;
+  stroke: var(--forest);
+  stroke-width: 2;
+}
+
+.delivery-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: rgba(121, 148, 135, 0.12);
+  margin-bottom: 16px;
+}
+.delivery-icon .lucide {
+  width: 26px;
+  height: 26px;
+  stroke: var(--forest);
+  stroke-width: 2;
+}
+
+.info-symbol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(189, 129, 93, 0.12);
+  flex-shrink: 0;
+}
+.info-symbol .lucide {
+  width: 22px;
+  height: 22px;
+  stroke: var(--copper);
+  stroke-width: 2;
+}
+
+.step-drawing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.step-drawing .lucide {
+  width: 26px;
+  height: 26px;
+  stroke: var(--forest);
+  stroke-width: 2;
+}
+
+.check-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(54, 88, 73, 0.12);
+  color: var(--forest);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.check-mark .lucide {
+  width: 12px;
+  height: 12px;
+  stroke-width: 2.8;
+  stroke: var(--forest);
+  vertical-align: 0;
+}
+
+.btn .lucide {
+  margin-left: 4px;
+  vertical-align: -0.15em;
+  width: 1.05em;
+  height: 1.05em;
+}
+
+.circle-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.circle-arrow .lucide {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2.2;
+  vertical-align: 0;
+}

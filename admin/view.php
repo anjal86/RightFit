@@ -175,7 +175,7 @@ $flash = getFlash();
         <span style="font-weight: 700; font-size: 15px;">Intake Dossier</span>
       </div>
       <div>
-        <a href="index.php" style="color: #cfded9; font-size: 13px;">← Return to All Submissions</a>
+        <a href="index.php" style="color: #cfded9; font-size: 13px; display: inline-flex; align-items: center; gap: 4px;"><i data-lucide="arrow-left" style="width: 14px; height: 14px;"></i> Return to All Submissions</a>
       </div>
     </div>
   </header>
@@ -183,7 +183,7 @@ $flash = getFlash();
   <main class="dossier-container">
     <div class="container">
       <div class="back-nav">
-        <a href="index.php">← Back to Submissions List</a>
+        <a href="index.php" style="display: inline-flex; align-items: center; gap: 6px;"><i data-lucide="arrow-left" style="width: 16px; height: 16px;"></i> Back to Submissions List</a>
       </div>
 
       <?php if ($flash): ?>
@@ -200,7 +200,7 @@ $flash = getFlash();
             <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 20px;">
               <div>
                 <span class="badge <?= $sub['type'] === 'referral' ? 'badge-referral' : 'badge-enquiry' ?>">
-                  <?= $sub['type'] === 'referral' ? '⭐ Clinical Referral' : '✉️ General Website Enquiry' ?>
+                  <?= $sub['type'] === 'referral' ? '<i data-lucide="star" style="width: 12px; height: 12px; vertical-align: -1px;"></i> Clinical Referral' : '<i data-lucide="mail" style="width: 12px; height: 12px; vertical-align: -1px;"></i> General Website Enquiry' ?>
                 </span>
                 <h1 style="font-size: 26px; font-weight: 700; margin: 12px 0 4px; color: var(--ink);">
                   <?= e($sub['name']) ?>
@@ -210,9 +210,9 @@ $flash = getFlash();
                 </div>
               </div>
               <div style="display: flex; gap: 10px;">
-                <a class="btn btn-small btn-copper" href="mailto:<?= e($sub['email']) ?>?subject=RightFit%20Allied%20Health%20Follow-up">Email ✉️</a>
+                <a class="btn btn-small btn-copper" href="mailto:<?= e($sub['email']) ?>?subject=RightFit%20Allied%20Health%20Follow-up"><i data-lucide="mail"></i> Email</a>
                 <?php if (!empty($sub['phone'])): ?>
-                  <a class="btn btn-small btn-dark" href="tel:<?= e($sub['phone']) ?>">Call 📞</a>
+                  <a class="btn btn-small btn-dark" href="tel:<?= e($sub['phone']) ?>"><i data-lucide="phone"></i> Call</a>
                 <?php endif; ?>
               </div>
             </div>
@@ -357,6 +357,13 @@ $flash = getFlash();
       </div>
     </div>
   </main>
+
+  <script src="../assets/lucide.min.js"></script>
+  <script>
+    if (typeof lucide !== 'undefined') {
+      lucide.createIcons();
+    }
+  </script>
 </body>
 </html>
 

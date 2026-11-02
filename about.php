@@ -100,22 +100,22 @@ require_once __DIR__ . "/includes/header.php";
 
         <div class="delivery-grid">
           <div class="delivery-card">
-            <div class="delivery-icon" aria-hidden="true">🛡️</div>
+            <div class="delivery-icon" aria-hidden="true"><i data-lucide="shield-check"></i></div>
             <h3>AHPRA Registered Clinicians</h3>
             <p>Our Physiotherapists and Occupational Therapists are registered with the Australian Health Practitioner Regulation Agency, adhering to strict professional standards.</p>
           </div>
           <div class="delivery-card">
-            <div class="delivery-icon" aria-hidden="true">🗣️</div>
+            <div class="delivery-icon" aria-hidden="true"><i data-lucide="message-square"></i></div>
             <h3>Speech Pathology Australia</h3>
             <p>Our Speech Pathologists hold Certified Practising Speech Pathologist (CPSP) accreditation with Speech Pathology Australia (SPA).</p>
           </div>
           <div class="delivery-card">
-            <div class="delivery-icon" aria-hidden="true">📋</div>
+            <div class="delivery-icon" aria-hidden="true"><i data-lucide="file-check-2"></i></div>
             <h3>NDIS Safeguards Commission</h3>
             <p>Our Behaviour Support Practitioners operate under the NDIS Quality and Safeguards Commission rules, prioritising positive behaviour support and reducing restrictive practices.</p>
           </div>
           <div class="delivery-card" id="privacy">
-            <div class="delivery-icon" aria-hidden="true">🔒</div>
+            <div class="delivery-icon" aria-hidden="true"><i data-lucide="lock"></i></div>
             <h3>Privacy &amp; Data Rights</h3>
             <p>We strictly protect participant health records and personal information in full compliance with the Privacy Act 1988 and the Australian Privacy Principles (APP).</p>
           </div>
@@ -132,8 +132,8 @@ require_once __DIR__ . "/includes/header.php";
             <h2>Let's find the right starting point.</h2>
             <p>Speak with our intake team, submit a client referral, or simply start an obligation-free conversation.</p>
             <div class="cta-buttons">
-              <a class="btn btn-copper" href="contact.php?type=referral">Submit a Referral ↗</a>
-              <a class="btn btn-dark" href="contact.php">General Enquiry ↗</a>
+              <a class="btn btn-copper" href="contact.php?type=referral">Submit a Referral <i data-lucide="arrow-up-right"></i></a>
+              <a class="btn btn-dark" href="contact.php">General Enquiry <i data-lucide="arrow-up-right"></i></a>
             </div>
           </div>
           <div class="cta-illustration" aria-hidden="true">

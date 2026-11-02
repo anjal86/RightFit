@@ -293,9 +293,9 @@ $submissions = $stmt->fetchAll();
       </div>
       <div class="admin-links">
         <span>Logged in as <strong><?= e($_SESSION['admin_username']) ?></strong></span>
-        <a href="settings.php">Password &amp; Settings</a>
-        <a href="../index.php" target="_blank">View Live Site ↗</a>
-        <a href="logout.php" style="color: #ffb8a6;">Log Out</a>
+        <a href="settings.php"><i data-lucide="settings" style="vertical-align: -0.15em;"></i> Settings</a>
+        <a href="../index.php" target="_blank">Live Site <i data-lucide="external-link" style="vertical-align: -0.15em;"></i></a>
+        <a href="logout.php" style="color: #ffb8a6;"><i data-lucide="log-out" style="vertical-align: -0.15em;"></i> Log Out</a>
       </div>
     </div>
   </header>
@@ -354,7 +354,7 @@ $submissions = $stmt->fetchAll();
         </form>
 
         <a href="export.php<?= !empty($_SERVER['QUERY_STRING']) ? '?' . e($_SERVER['QUERY_STRING']) : '' ?>" class="btn btn-small btn-copper">
-          Export CSV 📥
+          <i data-lucide="download"></i> Export CSV
         </a>
       </div>
 
@@ -427,7 +427,7 @@ $submissions = $stmt->fetchAll();
                     </td>
                     <td>
                       <div class="action-group">
-                        <a href="view.php?id=<?= $sub['id'] ?>" class="btn-action">View Full ↗</a>
+                        <a href="view.php?id=<?= $sub['id'] ?>" class="btn-action">View <i data-lucide="arrow-up-right"></i></a>
                         <form method="POST" action="index.php" style="margin: 0;" onsubmit="return confirm('Are you sure you want to delete submission #<?= $sub['id'] ?>? This action cannot be undone.');">
                           <input type="hidden" name="csrf_token" value="<?= csrfToken() ?>">
                           <input type="hidden" name="action" value="delete">
@@ -445,6 +445,13 @@ $submissions = $stmt->fetchAll();
       </div>
     </div>
   </main>
+
+  <script src="../assets/lucide.min.js"></script>
+  <script>
+    if (typeof lucide !== 'undefined') {
+      lucide.createIcons();
+    }
+  </script>
 </body>
 </html>
 

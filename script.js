@@ -257,10 +257,13 @@
         ${copied ? 'Details have been copied to your clipboard. ' : ''}
         You can send this directly via email or download a backup copy below:
         <div class="fallback-btn-group">
-          <a class="btn btn-small btn-dark" href="${mailtoUrl}">Open in Email Client ↗</a>
+          <a class="btn btn-small btn-dark" href="${mailtoUrl}">Open in Email Client <i data-lucide="arrow-up-right"></i></a>
           <button type="button" class="btn btn-small btn-light" id="${formId}-download-btn">Download Text (.txt)</button>
         </div>
       `;
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
 
       const downloadBtn = document.getElementById(`${formId}-download-btn`);
       if (downloadBtn) {
