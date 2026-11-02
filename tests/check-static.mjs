@@ -26,5 +26,11 @@ for(const [page,html] of Object.entries(contents)){
 }
 if(!contents['index.html'].includes('Behaviour Support')||!contents['services.html'].includes('Occupational Therapy'))failures.push('Original service content missing');
 if(!contents['contact.html'].includes('formspree.io/f/placeholder'))failures.push('Unexpected change to client-review intake concept');
+const sv=contents['services.html'];
+if(!sv.includes('rf-services-hero-media'))failures.push('Services header photo missing');
+if((sv.match(/class="service-art-wrapper rf-service-media"/g)||[]).length!==4)failures.push('Expected 4 consistent service photo panels');
+for(const service of ['physiotherapy','behaviour-support','occupational-therapy','speech-pathology']) {
+  if(!sv.includes('assets/'+service+'-art.webp'))failures.push('Missing brand artwork '+service);
+}
 if(failures.length){console.error(failures.join('\n'));process.exit(1)}
 console.log('PASS: Original client-review design and services, internal links, assets, preview SEO meta.');

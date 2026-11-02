@@ -5,7 +5,7 @@ const urls=[...new Set(pages.flatMap(p=>{
  const html=readFileSync(p,'utf8');
  return [...html.matchAll(/src="(https:\/\/images\.pexels\.com\/photos\/[^"]+)"/g)].map(m=>m[1].replaceAll('&amp;','&'));
 }))];
-if(urls.length!==11)throw new Error('Expected 11 photo placements but got '+urls.length);
+if(urls.length!==12)throw new Error('Expected 12 photo placements but got '+urls.length);
 const problems=[];
 await Promise.all(urls.map(async original=>{
  const u=new URL(original);u.searchParams.set('w','30');
