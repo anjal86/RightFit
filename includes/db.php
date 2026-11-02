@@ -155,7 +155,7 @@ function initDatabaseSchema(PDO $pdo): void {
     // Provision default administrator if table is empty
     $stmt = $pdo->query("SELECT COUNT(*) as count FROM admins");
     $row = $stmt->fetch();
-    if ((int)$row['count'] === 0) {
+    if ((int)$row['count'] === 0 && strlen(DEFAULT_ADMIN_PASS) >= 16) {
         $defaultHash = password_hash(DEFAULT_ADMIN_PASS, PASSWORD_DEFAULT);
         $insert = $pdo->prepare("INSERT INTO admins (username, password_hash, email) VALUES (:u, :p, :e)");
         $insert->execute([

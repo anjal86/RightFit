@@ -7,7 +7,7 @@ require_once __DIR__ . '/db.php';
 
 // Check if current user is logged in
 function isLoggedIn(): bool {
-    return !empty($_SESSION['admin_user_id']) && !empty($_SESSION['admin_username']);
+    return getenv('RIGHTFIT_ADMIN_ENABLED') === '1' && !empty($_SESSION['admin_user_id']) && !empty($_SESSION['admin_username']);
 }
 
 // Enforce authentication guard for admin pages
