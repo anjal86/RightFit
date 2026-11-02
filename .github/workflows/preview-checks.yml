@@ -14,6 +14,8 @@ jobs:
           node-version: '22'
       - name: Check preview pages and links
         run: node tests/check-static.mjs
+      - name: Verify photography URLs
+        run: node tests/check-photo-urls.mjs
       - name: Lint PHP source
         run: |
           for f in config.php submit.php index.php about.php services.php contact.php admin/*.php includes/*.php; do php -l "$f"; done

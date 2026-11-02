@@ -2805,3 +2805,61 @@ button {
 .mobile-nav .lucide,
 .footer .lucide { width: 1em; height: 1em; vertical-align: -.12em; }
 .text-link .lucide { width: 1em; height: 1em; vertical-align: -.15em; }
+
+
+/* Human-centred photography: original service illustrations remain the brand signatures. */
+.rf-hero-with-photo{isolation:isolate}
+.rf-hero-with-photo .rf-hero-photo{position:absolute;z-index:1;top:6%;right:5%;width:76%;height:82%;object-fit:cover;object-position:center;border:8px solid #fff;border-radius:46% 46% 12px 12px;box-shadow:0 22px 60px rgba(25,61,68,.16);background:#d9e8df}
+.rf-hero-with-photo .hero-art-card{z-index:3;border-width:5px}
+.rf-hero-with-photo .hero-art-primary{width:155px;height:170px;top:1%;left:2%;right:auto;padding:5px;transform:rotate(-5deg)}
+.rf-hero-with-photo .hero-art-secondary{width:127px;height:139px;left:2%;bottom:6%;padding:3px;transform:rotate(4deg)}
+.rf-hero-with-photo .hero-visual-label{z-index:4;right:0;bottom:7%}
+.rf-hero-with-photo .hero-bloom{z-index:4}
+.page-hero-stamp.rf-photo-stamp{width:320px;height:330px;border-radius:44% 44% 12px 12px;background:#d8e4db;overflow:visible;box-shadow:0 22px 60px rgba(25,61,68,.12)}
+.page-hero-stamp.rf-photo-stamp::before{display:none}
+.page-hero-stamp.rf-photo-stamp img.rf-page-photo{position:absolute;inset:0;width:100%;height:100%;max-width:none;max-height:none;object-fit:cover;object-position:center;border-radius:inherit}
+.page-hero-stamp.rf-photo-stamp picture{position:absolute;z-index:2;width:124px;height:124px;right:-9%;bottom:-7%;background:#fff;border-radius:50%;box-shadow:0 12px 28px rgba(25,61,68,.15);padding:8px}
+.page-hero-stamp.rf-photo-stamp picture img{max-width:100%;max-height:100%;width:100%;height:100%;object-fit:contain}
+.values-visual-inner.rf-photo-values{background:#dce9df}
+.rf-photo-values .halo{display:none}
+.values-visual-inner.rf-photo-values img.rf-values-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1}
+.values-visual-inner.rf-photo-values .rf-values-service-icon{position:absolute;z-index:3;top:15px;right:15px;width:125px;height:125px;max-width:31%;object-fit:contain;border:5px solid #fff;border-radius:14px;background:rgba(255,255,255,.95);box-shadow:0 14px 25px rgba(25,61,68,.14)}
+.values-visual-inner.rf-photo-values .values-caption{color:var(--ink);font-weight:700;letter-spacing:.1em;background:rgba(255,255,255,.94);padding:9px 12px;left:13px;bottom:13px;border-radius:3px}
+.rf-service-photo{width:100%;margin-top:20px;position:relative;overflow:hidden;border-radius:10px;background:#dce8df}
+.rf-service-photo .rf-service-photo-img{display:block;width:100%;height:175px;max-width:none;object-fit:cover;border-radius:10px}
+.rf-photo-caption{display:block;font-size:10px;letter-spacing:.06em;color:var(--forest);padding-top:6px;text-align:left}
+.rf-contact-photo-panel{width:100%;margin:18px 0;overflow:hidden;border-radius:13px;background:#e8f0e9}
+.rf-contact-photo-panel .rf-contact-photo{width:100%;height:210px;object-fit:cover;display:block}
+.rf-contact-photo-panel .rf-photo-caption{padding:10px 14px;background:#eef1e9}
+.rf-brand-ribbon{background:var(--cream);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.rf-brand-ribbon-inner{padding:30px 0;display:flex;align-items:center;justify-content:space-between;gap:30px}
+.rf-brand-ribbon-title{display:flex;flex-direction:column;flex-shrink:0}
+.rf-brand-label{font-size:10px;letter-spacing:.14em;font-weight:700;color:var(--copper-text)}
+.rf-brand-ribbon-title>span:last-child{font:italic 23px var(--serif);color:var(--ink)}
+.rf-brand-icons{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;flex:1;max-width:680px}
+.rf-brand-icons a{display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;font-size:11px;font-weight:700;color:var(--forest);line-height:1.3}
+.rf-brand-icons img{width:60px;height:60px;object-fit:contain;transition:transform .2s}
+.rf-brand-icons a:hover img{transform:translateY(-3px)}
+@media(max-width:960px){
+ .rf-hero-with-photo .rf-hero-photo{width:79%;right:1%}
+ .rf-hero-with-photo .hero-art-primary{width:124px;height:142px}
+ .rf-hero-with-photo .hero-art-secondary{width:104px;height:115px}
+ .rf-brand-ribbon-inner{display:block}
+ .rf-brand-icons{max-width:none;margin-top:17px}
+ .page-hero-stamp.rf-photo-stamp{width:250px;height:260px}
+ .page-hero-stamp.rf-photo-stamp picture{width:94px;height:94px}
+}
+@media(max-width:600px){
+ .rf-hero-with-photo .rf-hero-photo{top:4%;left:12%;right:auto;width:78%;height:82%;border-width:5px}
+ .rf-hero-with-photo .hero-art-primary{left:0;top:2%;width:105px;height:120px}
+ .rf-hero-with-photo .hero-art-secondary{left:2%;bottom:4%;width:95px;height:103px}
+ .rf-hero-with-photo .hero-visual-label{right:0;bottom:4%;max-width:210px}
+ .page-hero-stamp.rf-photo-stamp{width:min(250px,75vw);height:260px}
+ .page-hero-stamp.rf-photo-stamp picture{right:-4%}
+ .rf-brand-icons{grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}
+ .rf-brand-icons img{width:48px;height:48px}
+ .rf-brand-icons a{font-size:9px}
+ .rf-brand-ribbon-title>span:last-child{font-size:20px}
+ .values-visual-inner.rf-photo-values .rf-values-service-icon{width:95px;height:95px}
+}
+@media(prefers-reduced-motion:reduce){.rf-brand-icons img{transition:none}}
