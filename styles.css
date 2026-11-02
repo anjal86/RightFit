@@ -57,7 +57,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   pointer-events: all;
 }
 
@@ -101,7 +101,7 @@
   background: var(--copper);
   border-radius: 50%;
   box-shadow: 0 0 8px rgba(189, 129, 93, 0.6);
-  animation: pulse-dot 1.2s infinite ease-in-out;
+  animation: pulse-dot 1.75s infinite ease-in-out;
 }
 
 @keyframes pulse-dot {
