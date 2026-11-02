@@ -38,7 +38,7 @@ function navAria(string $page, string $current): string {
   <meta property="og:site_name" content="<?= e(APP_NAME) ?>">
   <meta property="og:title" content="<?= e($pageTitle) ?>">
   <meta property="og:description" content="<?= e($pageDescription) ?>">
-  <meta property="og:image" content="<?= APP_URL ?>/assets/rightfit-logo-white.png">
+  <meta property="og:image" content="<?= APP_URL ?>/assets/rightfit-logo.png">
   <meta property="og:url" content="<?= APP_URL ?>/">
   <meta property="og:locale" content="en_AU">
 
@@ -46,7 +46,7 @@ function navAria(string $page, string $current): string {
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="<?= e($pageTitle) ?>">
   <meta name="twitter:description" content="<?= e($pageDescription) ?>">
-  <meta name="twitter:image" content="<?= APP_URL ?>/assets/rightfit-logo-white.png">
+  <meta name="twitter:image" content="<?= APP_URL ?>/assets/rightfit-logo.png">
 
   <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json">
@@ -57,7 +57,7 @@ function navAria(string $page, string $current): string {
     "description": "Person-centred Physiotherapy, Behaviour Support (BSP), Occupational Therapy, and Speech Pathology allied health services.",
     "slogan": "Empowering Ability. Enabling Independence.",
     "url": "<?= APP_URL ?>/",
-    "logo": "<?= APP_URL ?>/assets/rightfit-logo-white.png",
+    "logo": "<?= APP_URL ?>/assets/rightfit-logo.png",
     "medicalSpecialty": [
       "Physiotherapy",
       "OccupationalTherapy",
@@ -93,7 +93,9 @@ function navAria(string $page, string $current): string {
   </script>
 
   <title><?= e($pageTitle) ?></title>
-  <link rel="icon" href="assets/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="128x128" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -136,8 +138,8 @@ function navAria(string $page, string $current): string {
     <div class="container header-inner">
       <a class="brand" href="index.php" aria-label="RightFit Allied Health Services, home">
         <picture>
-          <source srcset="assets/rightfit-logo-white.webp" type="image/webp">
-          <img src="assets/rightfit-logo-white.png" alt="RightFit Allied Health Services Logo" width="220" height="92">
+          <source srcset="assets/rightfit-logo.webp" type="image/webp">
+          <img src="assets/rightfit-logo.png" alt="RightFit Allied Health Services Logo" width="210" height="73">
         </picture>
       </a>
 
@@ -169,3 +171,4 @@ function navAria(string $page, string $current): string {
   </header>
 
   <main id="main">
+

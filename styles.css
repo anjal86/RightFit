@@ -260,16 +260,18 @@ button {
 }
 
 .brand {
-  width: 220px;
+  height: 58px;
   display: flex;
   align-items: center;
   flex-shrink: 0;
 }
 
 .brand img {
-  width: 100%;
-  height: auto;
-  mix-blend-mode: multiply;
+  height: 100%;
+  width: auto;
+  max-width: 210px;
+  object-fit: contain;
+  display: block;
 }
 
 .desktop-nav {
@@ -2133,7 +2135,10 @@ button {
     gap: 20px;
   }
   .brand {
-    width: 190px;
+    height: 52px;
+  }
+  .brand img {
+    max-width: 185px;
   }
   .services-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2165,7 +2170,10 @@ button {
     height: 76px;
   }
   .brand {
-    width: 175px;
+    height: 48px;
+  }
+  .brand img {
+    max-width: 165px;
   }
   .desktop-nav, .desktop-cta {
     display: none;

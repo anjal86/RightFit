@@ -49,14 +49,15 @@ $flash = getFlash();
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Submission #<?= $sub['id'] ?> | RightFit Intake</title>
-  <link rel="icon" href="../assets/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="128x128" href="../assets/favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
   <style>
     body { background: #f8f6f0; color: var(--ink); }
     .admin-navbar { background: #193d44; color: #fff; padding: 14px 0; }
     .admin-nav-inner { display: flex; align-items: center; justify-content: space-between; }
-    .admin-brand img { height: 38px; filter: brightness(0) invert(1); }
+    .admin-brand img { height: 38px; width: auto; }
     .dossier-container { padding: 40px 0 80px; }
     .back-nav { margin-bottom: 24px; }
     .back-nav a { font-size: 13px; font-weight: 700; color: var(--forest); display: inline-flex; align-items: center; gap: 6px; }
@@ -170,7 +171,7 @@ $flash = getFlash();
   <header class="admin-navbar">
     <div class="container admin-nav-inner">
       <div style="display: flex; align-items: center; gap: 14px;">
-        <a href="index.php"><img src="../assets/rightfit-logo-white.png" alt="RightFit"></a>
+        <a href="index.php"><img src="../assets/rightfit-logo-white-silhouette.png" alt="RightFit" style="height: 38px;"></a>
         <span style="font-weight: 700; font-size: 15px;">Intake Dossier</span>
       </div>
       <div>
@@ -358,3 +359,4 @@ $flash = getFlash();
   </main>
 </body>
 </html>
+

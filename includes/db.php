@@ -165,3 +165,4 @@ function initDatabaseSchema(PDO $pdo): void {
         ]);
     }
 }
+

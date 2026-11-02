@@ -206,3 +206,4 @@ if ($type === 'enquiry') {
         sendResponse(false, 'An unexpected error occurred while saving the referral. Please try again.', 500);
     }
 }
+

@@ -61,7 +61,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !$isLocked) {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Admin Login | RightFit Allied Health</title>
-  <link rel="icon" href="../assets/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="128x128" href="../assets/favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
   <style>
@@ -159,7 +160,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !$isLocked) {
   <div class="login-container">
     <div class="login-card">
       <div class="login-logo">
-        <img src="../assets/rightfit-logo-white.png" alt="RightFit Allied Health Services" width="180">
+        <picture>
+          <source srcset="../assets/rightfit-logo.webp" type="image/webp">
+          <img src="../assets/rightfit-logo.png" alt="RightFit Allied Health Services" width="210">
+        </picture>
       </div>
       <h1>Intake Portal Login</h1>
       <p class="subhead">Secure access to clinical enquiries and participant referrals.</p>
@@ -199,3 +203,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !$isLocked) {
   </div>
 </body>
 </html>
+
