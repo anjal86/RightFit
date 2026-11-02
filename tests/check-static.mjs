@@ -3,7 +3,10 @@ import { resolve } from 'node:path';
 const pages=['index.html','about.html','services.html','contact.html'];
 const contents=Object.fromEntries(pages.map(p=>[p,readFileSync(p,'utf8')]));
 const failures=[];
+const emojis=/[\u{1F300}-\u{1FAFF}]/u;
 for(const [page,html] of Object.entries(contents)){
+  if(emojis.test(html))failures.push(page+': emoji must be replaced with vector icons');
+  if(!html.includes('assets/lucide.min.js'))failures.push(page+': missing local Lucide icon runtime');
   if(!html.includes('name="robots" content="noindex, follow"'))failures.push(page+': no preview noindex');
   if(!html.includes('name="viewport"'))failures.push(page+': no viewport');
   if(!html.includes('styles.css'))failures.push(page+': no stylesheet');
