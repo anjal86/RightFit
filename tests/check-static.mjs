@@ -59,6 +59,9 @@ for(const [page,content] of Object.entries(contents)){
 for(const [page,html] of Object.entries(contents)){
   const band=html.match(/<section class="rf-contact-band"[\s\S]*?<\/section>/)?.[0]||'';
   if(!band.includes('1300 000 000') || !band.includes('<span>000 000</span>'))failures.push(page+': numeric placeholder missing from contact banner');
+  if(!band.includes('href="tel:1300000000"'))failures.push(page+': banner number must be clickable');
+  if(!band.includes('data-lucide="phone-call"'))failures.push(page+': banner missing left call icon');
+  if(!band.includes('data-lucide="mail"'))failures.push(page+': banner missing email icon');
   if(band.includes('1300 RIGHTFIT') || band.includes('>RIGHTFIT</span>'))failures.push(page+': obsolete branded number in contact banner');
 }
 if(failures.length){console.error(failures.join('\n'));process.exit(1)}

@@ -3154,3 +3154,114 @@ button {
   .rf-contact-band-email { min-height: 48px; padding-block: 12px; }
   .rf-contact-band-disclaimer { font-size: 11px; }
 }
+
+/* Click-to-call contact treatment: oversized typography without an oversized button. */
+.rf-contact-band-call {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  gap: clamp(16px, 2.7vw, 38px);
+  margin-top: clamp(9px, 1.2vw, 18px);
+  padding: 6px 0 10px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: color .2s ease;
+}
+.rf-contact-band-call-icon {
+  width: clamp(76px, 8.1vw, 116px);
+  height: clamp(76px, 8.1vw, 116px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  border: 1px solid rgba(239, 208, 181, .52);
+  background: rgba(189,129,93,.11);
+  border-radius: 50%;
+  color: #E7B18D;
+  transition: background-color .2s ease, transform .2s ease;
+}
+.rf-contact-band-call-icon svg {
+  width: 39%;
+  height: 39%;
+  stroke-width: 1.65;
+}
+.rf-contact-band-call-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #D8A383;
+  align-self: flex-start;
+  flex: 0 0 auto;
+  margin-top: 13px;
+  transition: transform .2s ease;
+}
+.rf-contact-band-call-arrow svg { width: 24px; height: 24px; stroke-width: 1.6; }
+.rf-contact-band-call:hover .rf-contact-band-call-icon {
+  transform: scale(1.035);
+  background: rgba(189,129,93,.25);
+}
+.rf-contact-band-call:hover .rf-contact-band-call-arrow { transform: translate(3px,-3px); }
+.rf-contact-band-call:hover .rf-contact-band-number { color: #F5D5BF; }
+.rf-contact-band-call:focus-visible,
+.rf-contact-band-email:focus-visible {
+  outline: 3px solid #F7C29B;
+  outline-offset: 7px;
+}
+.rf-contact-band-call .rf-contact-band-number {
+  min-width: 0;
+  font-size: clamp(49px, 7.9vw, 124px);
+  letter-spacing: -.07em;
+  transition: color .2s ease;
+}
+.rf-contact-band-bottom { align-items: center; }
+.rf-contact-band-email {
+  gap: 11px;
+  min-height: 50px;
+  padding: 13px 17px;
+  border: 1px solid rgba(236,239,232,.54);
+  border-radius: 5px;
+  background: rgba(255,255,255,.045);
+  text-decoration: none;
+  transition: border-color .2s ease, color .2s ease, background-color .2s ease;
+}
+.rf-contact-band-email:hover {
+  border-color: #F3C4A4;
+  background: rgba(255,255,255,.09);
+}
+@media (max-width: 860px) {
+  .rf-contact-band-call { gap: 19px; }
+  .rf-contact-band-call-icon {
+    width: clamp(68px, 8vw, 90px);
+    height: clamp(68px, 8vw, 90px);
+  }
+  .rf-contact-band-call .rf-contact-band-number { font-size: clamp(50px, 7.8vw, 86px); }
+}
+@media (max-width: 560px) {
+  .rf-contact-band-call {
+    align-items: center;
+    gap: 13px;
+    margin-top: 10px;
+    padding-bottom: 4px;
+  }
+  .rf-contact-band-call-icon {
+    width: clamp(52px, 17vw, 72px);
+    height: clamp(52px, 17vw, 72px);
+  }
+  .rf-contact-band-call .rf-contact-band-number {
+    font-size: clamp(48px, 13.8vw, 72px);
+    line-height: 1.02;
+    letter-spacing: -.076em;
+  }
+  .rf-contact-band-call-arrow { margin-top: 4px; align-self: flex-start; }
+  .rf-contact-band-call-arrow svg { width: 18px; height: 18px; }
+  .rf-contact-band-bottom { margin-top: 25px; }
+  .rf-contact-band-email { width: 100%; justify-content: space-between; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rf-contact-band-call,
+  .rf-contact-band-call-icon,
+  .rf-contact-band-call-arrow,
+  .rf-contact-band-call .rf-contact-band-number,
+  .rf-contact-band-email { transition: none; }
+}

@@ -57,6 +57,9 @@ try {
     }
     assert.ok(generated.includes('name="robots" content="noindex, follow"'));
     assert.ok(generated.includes('assets/rightfit-logo'));
+    assert.ok(generated.includes('class="rf-contact-band-call" href="tel:1300000000"'),
+      page+' PHP must render shared click-to-call banner');
+    assert.ok(generated.includes('data-lucide="phone-call"'),page+' PHP missing call icon');
     if(page==='index')assert.ok(generated.includes('class="hero home-hero-viewport"'));
     if(page==='services')assert.ok(generated.includes('rf-services-hero-photo'));
     if(page==='contact'){
