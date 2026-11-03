@@ -6,7 +6,7 @@ on:
     branches: [main]
 jobs:
   check-static:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -16,6 +16,12 @@ jobs:
         run: node tests/check-static.mjs
       - name: Verify loader plays once with slowed original frames
         run: python3 tools/verify_loader.py
+      - name: Install headless browser for first-fold layout checks
+        run: |
+          npm install --no-save playwright@1.56.1
+          npx playwright install chromium
+      - name: Verify homepage hero fits common viewport sizes
+        run: node tests/check-home-viewport.mjs
       - name: Verify photography URLs
         run: node tests/check-photo-urls.mjs
       - name: Lint PHP source

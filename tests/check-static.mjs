@@ -38,5 +38,13 @@ if(!loaderJS.includes("rf_loader_played_session"))failures.push('Loader must pla
 if(!loaderJS.includes('cycleMs = 5600'))failures.push('Loader display must match the retimed 5.6s assets');
 if(!loaderJS.includes('scheduled = true'))failures.push('Loader must not schedule duplicate dismissals');
 if(!loaderCSS.includes('opacity 0.8s'))failures.push('Loader fade timing should remain 0.8s');
+// The first fold is viewport-height-aware, not an oversized 620px fixed hero.
+const homeHeroHTML=contents['index.html'];
+const homeHeroCSS=readFileSync('styles.css','utf8');
+const homeHeroJS=readFileSync('script.js','utf8');
+if(!homeHeroHTML.includes('class="hero home-hero-viewport"'))failures.push('Homepage is missing the first-fold hero class');
+if(!homeHeroCSS.includes('min-height: calc(100svh - var(--rf-first-fold-offset))'))failures.push('Homepage hero does not fit visible viewport');
+if(!homeHeroCSS.includes('flex: 1 0 auto'))failures.push('Homepage hero needs a flexible content row');
+if(!homeHeroJS.includes("getBoundingClientRect().height") || !homeHeroJS.includes("--rf-first-fold-offset"))failures.push('Homepage hero must account for actual header height');
 if(failures.length){console.error(failures.join('\n'));process.exit(1)}
 console.log('PASS: Original client-review design and services, internal links, assets, preview SEO meta.');

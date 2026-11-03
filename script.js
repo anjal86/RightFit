@@ -52,6 +52,27 @@
     yearEl.textContent = String(new Date().getFullYear());
   }
 
+  // Fit the homepage hero to the *remaining* visible first viewport.
+  // Measure the real header and optional utility bar, including responsive sizes.
+  const homeHero = document.querySelector('.home-hero-viewport');
+  if (homeHero) {
+    const firstFoldHeader = document.querySelector('.site-header');
+    const firstFoldUtility = document.querySelector('.top-bar');
+    const syncFirstFold = () => {
+      const headerHeight = firstFoldHeader?.getBoundingClientRect().height || 0;
+      const utilityHeight = firstFoldUtility?.getBoundingClientRect().height || 0;
+      homeHero.style.setProperty('--rf-first-fold-offset', `${Math.ceil(headerHeight + utilityHeight)}px`);
+    };
+    syncFirstFold();
+    window.addEventListener('resize', syncFirstFold, { passive: true });
+    if ('ResizeObserver' in window) {
+      const observer = new ResizeObserver(syncFirstFold);
+      if (firstFoldHeader) observer.observe(firstFoldHeader);
+      if (firstFoldUtility) observer.observe(firstFoldUtility);
+    }
+    if (document.fonts?.ready) document.fonts.ready.then(syncFirstFold).catch(() => {});
+  }
+
   // 2. Sticky Header Elevation on Scroll
   const header = document.querySelector('.site-header');
   if (header) {
