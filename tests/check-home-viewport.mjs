@@ -53,11 +53,30 @@ try {
         topbar: Math.round(topbar.getBoundingClientRect().height),
         copyBottom: Math.round(copy.bottom), visualBottom: Math.round(visual.bottom),
         footerTop: Math.round(contentFooter.top),
-        overflowX: document.documentElement.scrollWidth - document.documentElement.clientWidth
+        overflowX: document.documentElement.scrollWidth - document.documentElement.clientWidth,
+        callLink: (() => {
+          const call=document.querySelector('.rf-contact-band-call');
+          const icon=call?.querySelector('.rf-contact-band-call-icon');
+          const num=call?.querySelector('.rf-contact-band-number');
+          const bounds=call?.getBoundingClientRect();
+          const n=num?.getBoundingClientRect();
+          const i=icon?.getBoundingClientRect();
+          return {href:call?.getAttribute('href'),left:bounds?.left,right:bounds?.right,
+            iconRight:i?.right,numberLeft:n?.left,numberRight:n?.right,
+            phoneIcon:!!call?.querySelector('[data-lucide="phone-call"]'),
+            width:document.documentElement.clientWidth};
+        })()
       };
     });
     console.log(size.width+'x'+size.height, JSON.stringify(result));
     if (result.overflowX > 2) errors.push(size.width+'x'+size.height+': horizontal overflow '+result.overflowX);
+    const call=result.callLink;
+    if (call.href!=='tel:1300000000' || !call.phoneIcon)
+      errors.push(size.width+'x'+size.height+': missing functional call link or icon');
+    if (call.left < -2 || call.right > call.width+2 || call.numberRight>call.width+2)
+      errors.push(size.width+'x'+size.height+': call link overflows viewport');
+    if (call.iconRight > call.numberLeft)
+      errors.push(size.width+'x'+size.height+': call icon overlaps phone number');
     if (result.copyBottom > result.footerTop + 2 || result.visualBottom > result.footerTop + 2)
       errors.push(size.width+'x'+size.height+': hero copy or art overlaps footer');
     // Allow very short phone viewports to scroll rather than hiding content.
