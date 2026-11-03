@@ -242,9 +242,9 @@
 
           const data = await res.json().catch(() => null);
 
-          if (res.ok && (!data || data.success !== false)) {
+          if (res.ok && data && data.success === true) {
             feedback.className = 'form-feedback success';
-            feedback.innerHTML = `<strong>Thank you!</strong> ${data && data.message ? data.message : 'Your submission has been received. Our clinical intake team will be in touch shortly.'}`;
+            feedback.textContent = data.message || 'Your submission has been received.';
             form.reset();
             return;
           } else {
@@ -252,9 +252,14 @@
             throw new Error(errorMsg);
           }
         } catch (err) {
-          console.warn('Endpoint submission issue, providing error and fallback:', err);
+          console.warn('RightFit server intake was not completed:', err);
           feedback.className = 'form-feedback error';
-          feedback.innerHTML = `<strong>Submission issue:</strong> ${err.message || 'Could not reach server.'}<br>Please review your information, or use the direct options below:`;
+          feedback.textContent = 'The submission was not completed: ' +
+            (err.message || 'Could not reach the server.') +
+            ' Please try again after the intake service has been enabled.';
+          // Never treat a rejected health-data POST as a completed draft or
+          // send participant details to an unverified fallback email address.
+          return;
         }
       }
 
@@ -322,7 +327,7 @@
     'referral-form',
     'referral-feedback',
     (data) => {
-      const services = data.getAll('services_requested').join(', ') || 'Not specified';
+      const services = [...data.getAll('services_requested'), ...data.getAll('services_requested[]')].join(', ') || 'Not specified';
       return `RightFit Allied Health Services — Client Referral Form\n` +
              `======================================================\n\n` +
              `[1. REFERRER DETAILS]\n` +

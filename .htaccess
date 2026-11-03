@@ -1,4 +1,7 @@
 # RightFit Allied Health — cPanel Apache Configuration
+# Serve PHP renderer by default on PHP-capable hosting; GitHub Pages ignores this file.
+DirectoryIndex index.php index.html
+
 # Enable Rewrite Engine
 <IfModule mod_rewrite.c>
     RewriteEngine On
@@ -7,6 +10,10 @@
     # Block access to protected directories and configuration
     RewriteRule ^(data|includes|\.git) - [F,L]
     RewriteRule ^(config\.php|composer\..*|package\..*) - [F,L]
+
+    # The HTML pages are the editable shared templates; visitors to a PHP host
+    # should be served by the PHP renderer, not the static preview form endpoint.
+    RewriteRule ^(index|about|services|contact)\.html$ $1.php [R=302,L,NC]
 
     # Clean URL support: /about -> /about.php
     RewriteCond %{REQUEST_FILENAME} !-d
