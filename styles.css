@@ -3050,3 +3050,107 @@ button {
   .home-hero-viewport .hero-note { margin-top: 8px; padding-top: 7px; }
   .home-hero-viewport .hero-visual { height: clamp(150px, 23svh, 195px); }
 }
+
+
+/* Shared pre-footer contact band — intentionally typographic, spacious and minimal. */
+.rf-contact-band {
+  background: var(--ink);
+  color: var(--ivory);
+  position: relative;
+  overflow: hidden;
+}
+.rf-contact-band-inner {
+  padding-block: clamp(62px, 7.1vw, 108px) clamp(52px, 6.1vw, 88px);
+}
+.rf-contact-band-kicker {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  color: #bfd1ca;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .16em;
+}
+.rf-contact-band-line {
+  width: 27px;
+  height: 1px;
+  background: var(--copper);
+}
+.rf-contact-band h2 {
+  font: 400 clamp(27px, 3vw, 42px) / 1.13 var(--serif);
+  letter-spacing: -.035em;
+  margin: clamp(23px, 3vw, 38px) 0 6px;
+  color: #f5f1e9;
+}
+.rf-contact-band-number {
+  margin: 0;
+  white-space: nowrap;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: clamp(54px, 9.4vw, 145px);
+  line-height: 1.14;
+  letter-spacing: -.075em;
+  color: #ffffff;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.rf-contact-band-number span { display: inline-block; }
+.rf-contact-band-bottom {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  column-gap: 32px;
+  row-gap: 20px;
+  margin-top: clamp(24px, 3.2vw, 40px);
+  padding-top: 21px;
+  border-top: 1px solid rgba(255,255,255,.23);
+}
+.rf-contact-band-disclaimer {
+  font-size: 12px;
+  color: #bacac4;
+  letter-spacing: .01em;
+}
+.rf-contact-band-email {
+  display: inline-flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--copper);
+  transition: color .18s ease, border-color .18s ease;
+}
+.rf-contact-band-email:hover {
+  color: #f3c4a4;
+  border-color: #f3c4a4;
+}
+.rf-contact-band-email i,
+.rf-contact-band-email svg { width: 17px; height: 17px; }
+@media (max-width: 860px) {
+  .rf-contact-band-inner { padding-block: 62px 54px; }
+  .rf-contact-band-number { font-size: clamp(54px, 9.3vw, 92px); }
+}
+@media (max-width: 560px) {
+  .rf-contact-band-inner { padding-block: 57px 48px; }
+  .rf-contact-band-kicker { font-size: 10px; }
+  .rf-contact-band h2 { margin: 25px 0 15px; font-size: 31px; }
+  .rf-contact-band-number {
+    white-space: normal;
+    font-size: clamp(60px, 16vw, 92px);
+    line-height: 1.02;
+    letter-spacing: -.077em;
+  }
+  .rf-contact-band-number span { display: block; }
+  .rf-contact-band-bottom {
+    align-items: flex-start;
+    flex-direction: column-reverse;
+    gap: 17px;
+    padding-top: 18px;
+    margin-top: 24px;
+  }
+  .rf-contact-band-email { min-height: 48px; padding-block: 12px; }
+  .rf-contact-band-disclaimer { font-size: 11px; }
+}

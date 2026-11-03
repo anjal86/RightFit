@@ -46,5 +46,15 @@ if(!homeHeroHTML.includes('class="hero home-hero-viewport"'))failures.push('Home
 if(!homeHeroCSS.includes('min-height: calc(100svh - var(--rf-first-fold-offset))'))failures.push('Homepage hero does not fit visible viewport');
 if(!homeHeroCSS.includes('flex: 1 0 auto'))failures.push('Homepage hero needs a flexible content row');
 if(!homeHeroJS.includes("getBoundingClientRect().height") || !homeHeroJS.includes("--rf-first-fold-offset"))failures.push('Homepage hero must account for actual header height');
+// Keep the same minimalist pre-footer contact band on every shared page.
+const bandSource=contents['index.html'].match(/  <!-- Shared preview \+ PHP contact band[\s\S]*?<\/section>/)?.[0];
+if(!bandSource)failures.push('Shared contact band missing on home');
+for(const [page,content] of Object.entries(contents)){
+  const match=content.match(/  <!-- Shared preview \+ PHP contact band[\s\S]*?<\/section>/);
+  if(!match || match[0]!==bandSource)failures.push(page+': contact band out of sync');
+  if(!match || content.indexOf('rf-contact-band-inner')>content.indexOf('<footer class="footer">'))failures.push(page+': contact band not before footer');
+  if(!match || !match[0].includes('contact.html'))failures.push(page+': missing email enquiry action');
+  if(!match || !match[0].includes('awaiting client confirmation'))failures.push(page+': unverified number must be labelled');
+}
 if(failures.length){console.error(failures.join('\n'));process.exit(1)}
 console.log('PASS: Original client-review design and services, internal links, assets, preview SEO meta.');
