@@ -56,5 +56,10 @@ for(const [page,content] of Object.entries(contents)){
   if(!match || !match[0].includes('contact.html'))failures.push(page+': missing email enquiry action');
   if(!match || !match[0].includes('awaiting client confirmation'))failures.push(page+': unverified number must be labelled');
 }
+for(const [page,html] of Object.entries(contents)){
+  const band=html.match(/<section class="rf-contact-band"[\s\S]*?<\/section>/)?.[0]||'';
+  if(!band.includes('1300 000 000') || !band.includes('<span>000 000</span>'))failures.push(page+': numeric placeholder missing from contact banner');
+  if(band.includes('1300 RIGHTFIT') || band.includes('>RIGHTFIT</span>'))failures.push(page+': obsolete branded number in contact banner');
+}
 if(failures.length){console.error(failures.join('\n'));process.exit(1)}
 console.log('PASS: Original client-review design and services, internal links, assets, preview SEO meta.');
