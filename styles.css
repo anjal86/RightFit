@@ -3265,3 +3265,176 @@ button {
   .rf-contact-band-call .rf-contact-band-number,
   .rf-contact-band-email { transition: none; }
 }
+
+
+/* Homepage values: dedicated photo-first layout, not the legacy narrow illustration slot. */
+.rf-home-values .rf-values-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(0, 1fr);
+  grid-template-areas: "photo intro" "photo details";
+  grid-template-rows: auto 1fr;
+  column-gap: clamp(36px, 5.8vw, 88px);
+  row-gap: 12px;
+  align-items: start;
+}
+.rf-home-values .rf-values-intro { grid-area: intro; min-width: 0; align-self: end; }
+.rf-home-values .rf-values-intro > .lead { font-size: clamp(18px, 1.65vw, 21px); color: #31524a; line-height: 1.65; }
+.rf-home-values .rf-values-intro .section-title { margin-block: 19px 18px; }
+.rf-home-values .rf-values-details { grid-area: details; min-width: 0; align-self: start; }
+.rf-home-values .rf-values-details .values-list { margin: 19px 0 24px; }
+.rf-home-values .rf-values-visual {
+  grid-area: photo;
+  position: relative;
+  width: 100%;
+  max-width: none;
+  height: 560px;
+  min-height: 0;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  border-radius: 18px;
+  background: #e5ede6;
+  align-self: center;
+}
+.rf-home-values .rf-values-visual::before {
+  top: -12px; left: -12px;
+  width: 74px; height: 74px;
+  border-color: var(--copper);
+  z-index: 0;
+}
+.rf-home-values .values-visual-inner.rf-photo-values {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: block;
+  border-radius: inherit;
+  background: #e5ede6;
+  box-shadow: 0 20px 48px rgba(25, 61, 68, .10);
+}
+.rf-home-values .values-visual-inner.rf-photo-values > img.rf-values-photo {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  min-width: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  z-index: 1;
+  border-radius: 0;
+  opacity: 1;
+}
+.rf-home-values .rf-values-art {
+  position: absolute;
+  z-index: 4;
+  top: 18px;
+  right: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 116px;
+  height: 116px;
+  padding: 8px;
+  border: 5px solid white;
+  border-radius: 16px;
+  background: #fcfaf6;
+  box-shadow: 0 12px 28px rgba(25,61,68,.19);
+}
+.rf-home-values .rf-values-art img.rf-values-service-icon {
+  display: block;
+  position: static;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-shadow: none;
+  background: transparent;
+  border-radius: 0;
+}
+.rf-home-values .values-visual-inner.rf-photo-values > .rf-values-caption {
+  z-index: 5;
+  bottom: 17px;
+  left: 17px;
+  right: auto;
+  width: max-content;
+  max-width: calc(100% - 34px);
+  padding: 11px 14px;
+  background: rgba(25, 61, 68, .89);
+  color: #fff;
+  font-size: 10px;
+  line-height: 1.5;
+  letter-spacing: .105em;
+  border-radius: 6px;
+  white-space: normal;
+  text-wrap: balance;
+}
+@media (max-width: 860px) {
+  .rf-home-values .rf-values-layout {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "intro" "photo" "details";
+    grid-template-rows: auto auto auto;
+    gap: 23px;
+  }
+  .rf-home-values .rf-values-intro .section-title { margin: 12px 0 14px; }
+  .rf-home-values .rf-values-intro > .lead { max-width: 650px; }
+  .rf-home-values .rf-values-visual {
+    margin: 0;
+    max-width: none;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    min-height: 0;
+    border-radius: 16px;
+  }
+  .rf-home-values .rf-values-art {
+    top: 14px; right: 14px;
+    width: 96px; height: 96px;
+    padding: 6px;
+  }
+  .rf-home-values .rf-values-details .values-list { margin: 0 0 22px; }
+}
+@media (max-width: 560px) {
+  .rf-home-values .rf-values-layout { gap: 20px; }
+  .rf-home-values .rf-values-intro .section-title { margin: 10px 0 12px; }
+  .rf-home-values .rf-values-intro > .lead {
+    font-size: 17px;
+    line-height: 1.6;
+    margin: 0;
+  }
+  .rf-home-values .rf-values-visual {
+    height: auto;
+    aspect-ratio: 1.30 / 1;
+    border-radius: 14px;
+  }
+  .rf-home-values .rf-values-visual::before { display: none; }
+  .rf-home-values .rf-values-art {
+    width: 78px; height: 78px;
+    top: 10px; right: 10px;
+    border-width: 3px;
+    border-radius: 12px;
+    padding: 5px;
+  }
+  .rf-home-values .values-visual-inner.rf-photo-values > .rf-values-caption {
+    left: 10px; bottom: 10px;
+    max-width: calc(100% - 20px);
+    padding: 8px 10px;
+    font-size: 9px;
+    line-height: 1.35;
+    letter-spacing: .07em;
+  }
+  .rf-home-values .rf-values-details .values-list > div {
+    grid-template-columns: 38px 1fr;
+    gap: 10px;
+    padding: 17px 0;
+  }
+  .rf-home-values .rf-values-details .values-list h3 { font-size: 16px; }
+  .rf-home-values .rf-values-details .values-list p {
+    max-width: none;
+    font-size: 13px;
+    line-height: 1.65;
+  }
+}

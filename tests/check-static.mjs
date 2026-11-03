@@ -64,5 +64,15 @@ for(const [page,html] of Object.entries(contents)){
   if(!band.includes('data-lucide="mail"'))failures.push(page+': banner missing email icon');
   if(band.includes('1300 RIGHTFIT') || band.includes('>RIGHTFIT</span>'))failures.push(page+': obsolete branded number in contact banner');
 }
+// Homepage values is a genuinely responsive photo composition with its own service illustration.
+const home=contents['index.html'];
+const valuesMarkup=home.match(/<section class="section values-section rf-home-values"[\s\S]*?<\/section>/)?.[0]||'';
+for(const fragment of [
+  'assets/values-consultation.jpg','assets/behaviour-support-art.webp',
+  'assets/behaviour-support-art.png','class="rf-values-art"',
+  'class="rf-values-photo"','class="rf-values-intro"','class="rf-values-details"'
+])if(!valuesMarkup.includes(fragment))failures.push('Homepage values missing '+fragment);
+if(valuesMarkup.indexOf('class="rf-values-intro"')>valuesMarkup.indexOf('class="values-visual rf-values-visual"'))
+  failures.push('Homepage values heading must precede visual in reading order');
 if(failures.length){console.error(failures.join('\n'));process.exit(1)}
 console.log('PASS: Original client-review design and services, internal links, assets, preview SEO meta.');

@@ -1,0 +1,26 @@
+name: Cache RightFit homepage Values photo (one-time)
+on:
+  push:
+    branches: [fix/home-values-mobile-photo-and-icon-2026-11-03]
+    paths:
+      - tools/cache_home_values_photo.sh
+      - .github/workflows/cache-home-values-photo.yml
+permissions:
+  contents: write
+jobs:
+  cache:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Fetch attributed consultation photo
+        run: bash tools/cache_home_values_photo.sh
+      - name: Commit self-hosted photo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/values-consultation.jpg
+          git diff --cached --quiet && exit 0
+          git commit -m "assets: self-host Values consultation photo for mobile reliability"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
