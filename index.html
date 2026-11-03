@@ -390,18 +390,27 @@
       </div>
     </section>
 
-    <!-- Values Section -->
-    <section class="section values-section">
-      <div class="container values-grid">
-        <div class="values-visual">
-          <div class="values-visual-inner rf-photo-values"><div class="halo"></div><img class="rf-values-photo" src="https://images.pexels.com/photos/7176052/pexels-photo-7176052.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1000" alt="Two people in a supportive conversation during an illustrative therapy session" width="1100" height="800" decoding="async" loading="lazy"><img class="rf-values-service-icon" src="assets/behaviour-support-art.webp" alt="RightFit Behaviour Support illustration" loading="lazy" width="125" height="125">
-            <span class="values-caption">GROWTH LOOKS DIFFERENT FOR EVERYONE</span>
-          </div>
-        </div>
-        <div class="values-copy">
+    <!-- Values Section: one responsive photo-led layout; desktop and mobile share the same markup -->
+    <section class="section values-section rf-home-values" aria-labelledby="home-values-heading">
+      <div class="container values-grid rf-values-layout">
+        <div class="rf-values-intro">
           <div class="eyebrow">A DIFFERENT WAY TO CARE</div>
-          <h2 class="section-title">Your journey is <em>uniquely yours.</em></h2>
+          <h2 class="section-title" id="home-values-heading">Your journey is <em>uniquely yours.</em></h2>
           <p class="lead">No two people have the same goals, strengths, or circumstances. Good support creates space for that.</p>
+        </div>
+
+        <figure class="values-visual rf-values-visual">
+          <div class="values-visual-inner rf-photo-values">
+            <img class="rf-values-photo" src="assets/values-consultation.jpg" alt="Illustrative stock photograph of two people speaking during a supportive therapy session" width="1100" height="800" loading="eager" fetchpriority="low" decoding="async">
+            <picture class="rf-values-art">
+              <source srcset="assets/behaviour-support-art.webp" type="image/webp">
+              <img class="rf-values-service-icon" src="assets/behaviour-support-art.png" alt="RightFit Behaviour Support botanical illustration" width="125" height="125" loading="eager" decoding="async">
+            </picture>
+            <figcaption class="values-caption rf-values-caption">GROWTH LOOKS DIFFERENT FOR EVERYONE</figcaption>
+          </div>
+        </figure>
+
+        <div class="rf-values-details">
           <div class="values-list">
             <div>
               <span class="values-numeric">01</span>

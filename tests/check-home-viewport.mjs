@@ -37,6 +37,10 @@ try {
     await page.route(/^https:\/\/(images\.pexels\.com|fonts\.googleapis\.com|fonts\.gstatic\.com)\//,
       route=>route.abort());
     await page.goto('http://127.0.0.1:'+server.address().port+'/index.html', {waitUntil:'domcontentloaded'});
+    // Require the actual locally hosted photography and original service art to decode.
+    // This catches blank image sections even when CSS sizes appear correct.
+    await page.locator('.rf-values-photo').evaluate(image => image.decode());
+    await page.locator('.rf-values-art img').evaluate(image => image.decode());
     await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
     const result = await page.evaluate(() => {
       const hero = document.querySelector('.home-hero-viewport');
@@ -54,6 +58,34 @@ try {
         copyBottom: Math.round(copy.bottom), visualBottom: Math.round(visual.bottom),
         footerTop: Math.round(contentFooter.top),
         overflowX: document.documentElement.scrollWidth - document.documentElement.clientWidth,
+        valuesSection: (() => {
+          const root = document.querySelector('.rf-home-values');
+          const intro = root?.querySelector('.rf-values-intro');
+          const media = root?.querySelector('.rf-values-visual');
+          const photo = root?.querySelector('.rf-values-photo');
+          const icon = root?.querySelector('.rf-values-art');
+          const iconImage = icon?.querySelector('img');
+          const details = root?.querySelector('.rf-values-details');
+          const ir = intro?.getBoundingClientRect();
+          const mr = media?.getBoundingClientRect();
+          const pr = photo?.getBoundingClientRect();
+          const ar = icon?.getBoundingClientRect();
+          const dr = details?.getBoundingClientRect();
+          const computedPhoto = photo ? getComputedStyle(photo) : null;
+          return {
+            introBottom: ir?.bottom, introLeft: ir?.left,
+            mediaTop: mr?.top, mediaBottom: mr?.bottom,
+            mediaWidth: mr?.width, mediaHeight: mr?.height,
+            mediaLeft: mr?.left, mediaRight: mr?.right,
+            photoWidth: pr?.width, photoHeight: pr?.height,
+            naturalWidth: photo?.naturalWidth, naturalHeight: photo?.naturalHeight,
+            photoFit: computedPhoto?.objectFit, photoPosition: computedPhoto?.position,
+            artLeft: ar?.left, artTop: ar?.top,
+            artRight: ar?.right, artBottom: ar?.bottom,
+            artWidth: ar?.width, artNaturalWidth: iconImage?.naturalWidth,
+            detailsTop: dr?.top
+          };
+        })(),
         callLink: (() => {
           const call=document.querySelector('.rf-contact-band-call');
           const icon=call?.querySelector('.rf-contact-band-call-icon');
@@ -70,6 +102,22 @@ try {
     });
     console.log(size.width+'x'+size.height, JSON.stringify(result));
     if (result.overflowX > 2) errors.push(size.width+'x'+size.height+': horizontal overflow '+result.overflowX);
+    const value=result.valuesSection;
+    if (!(value.naturalWidth>100 && value.naturalHeight>100 && value.artNaturalWidth>50))
+      errors.push(size.width+'x'+size.height+': home values photo or illustration not decoded');
+    if (Math.abs(value.photoWidth-value.mediaWidth)>2 || Math.abs(value.photoHeight-value.mediaHeight)>2)
+      errors.push(size.width+'x'+size.height+': home values photo is not filling its frame');
+    if (value.photoFit!=='cover' || value.photoPosition!=='absolute')
+      errors.push(size.width+'x'+size.height+': home values image needs full-bleed cover');
+    if (value.artWidth<65 || value.artLeft<value.mediaLeft || value.artRight>value.mediaRight+1)
+      errors.push(size.width+'x'+size.height+': home values brand art missing/outside photo');
+    if (size.width<=860 && (value.introBottom>value.mediaTop || value.mediaBottom>value.detailsTop))
+      errors.push(size.width+'x'+size.height+': home values mobile order must be heading / photo / steps');
+    if (size.width<=860 && (value.mediaTop-value.introBottom>65 || value.detailsTop-value.mediaBottom>65))
+      errors.push(size.width+'x'+size.height+': home values mobile spacing too large');
+    if (size.width<=860 && value.mediaWidth<size.width*.76)
+      errors.push(size.width+'x'+size.height+': photo too narrow on mobile');
+
     const call=result.callLink;
     if (call.href!=='tel:1300000000' || !call.phoneIcon)
       errors.push(size.width+'x'+size.height+': missing functional call link or icon');
