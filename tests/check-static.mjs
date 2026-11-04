@@ -74,10 +74,10 @@ for(const fragment of [
 ])if(!valuesMarkup.includes(fragment))failures.push('Homepage values missing '+fragment);
 if(valuesMarkup.indexOf('class="rf-values-intro"')>valuesMarkup.indexOf('class="values-visual rf-values-visual"'))
   failures.push('Homepage values heading must precede visual in reading order');
-// Sticky headers must use the viewport, not a scroll container created by overflow-x:hidden.
+// Verify no overflow-created scrolling ancestor prevents viewport sticky positioning.
 const stickyCSS=readFileSync('styles.css','utf8');
-if(!/html\s*\{[^}]*overflow-x:\s*clip/.test(stickyCSS)) failures.push('html overflow-x must clip, not block sticky');
-if(!/body\s*\{[^}]*overflow-x:\\s*clip/.test(stickyCSS)) failures.push('body overflow-x must clip, not block sticky');
-if(!/\.site-header\s*\{[^}]*position:\s*sticky;[^}]*top:\s*0/.test(stickyCSS))failures.push('Header must be sticky at top of viewport');
+if(!/html\s*\{[^}]*overflow-x:\s*clip/.test(stickyCSS))failures.push('html overflow must not intercept sticky header');
+if(!/body\s*\{[^}]*overflow-x:\s*clip/.test(stickyCSS))failures.push('body overflow must not intercept sticky header');
+if(!/\.site-header\s*\{[^}]*position:\s*sticky;[^}]*top:\s*0/.test(stickyCSS))failures.push('header must stick to viewport top');
 if(failures.length){console.error(failures.join('\n'));process.exit(1)}
 console.log('PASS: Original client-review design and services, internal links, assets, preview SEO meta.');
