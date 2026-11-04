@@ -1,0 +1,50 @@
+  <!-- Utility Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-left">
+        <span class="top-bar-tag"><span class="badge-dot" aria-hidden="true"></span> Welcoming NDIS Plan-Managed &amp; Self-Managed Clients</span>
+        <span class="top-bar-tag">{{DELIVERY_MODE}}</span>
+      </div>
+      <div class="top-bar-right">
+        <a href="tel:1300000000" aria-label="{{TOP_PHONE_LABEL}}"><i data-lucide="phone" aria-hidden="true"></i> 1300 RIGHTFIT</a>
+        <a href="{{TOP_REFERRAL_HREF}}" class="top-bar-referral">Make a Referral ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Primary Header -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="RightFit Allied Health Services, home">
+        <picture>
+          <source srcset="assets/rightfit-logo.webp" type="image/webp">
+          <img src="assets/rightfit-logo.png" alt="RightFit Allied Health Services Logo" width="220" height="92">
+        </picture>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a class="nav-link{{ACTIVE_INDEX}}" href="index.html"{{ARIA_INDEX}}>Home</a>
+        <a class="nav-link{{ACTIVE_ABOUT}}" href="about.html"{{ARIA_ABOUT}}>About us</a>
+        <a class="nav-link{{ACTIVE_SERVICES}}" href="services.html"{{ARIA_SERVICES}}>Our services</a>
+        <a class="nav-link{{ACTIVE_CONTACT}}" href="contact.html"{{ARIA_CONTACT}}>Contact &amp; Referrals</a>
+      </nav>
+
+      <div class="header-actions">
+{{GENERAL_ENQUIRY_CTA}}        <a class="btn btn-small btn-copper desktop-cta" href="contact.html?type=referral">Make a Referral ↗</a>
+        <button class="menu-button" id="menu-button" aria-label="Open navigation" aria-controls="mobile-nav" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden>
+      <a class="nav-link{{ACTIVE_INDEX}}" href="index.html"{{ARIA_INDEX}}>Home</a>
+      <a class="nav-link{{ACTIVE_ABOUT}}" href="about.html"{{ARIA_ABOUT}}>About us</a>
+      <a class="nav-link{{ACTIVE_SERVICES}}" href="services.html"{{ARIA_SERVICES}}>Our services</a>
+      <a class="nav-link{{ACTIVE_CONTACT}}" href="contact.html"{{ARIA_CONTACT}}>Contact &amp; Referrals</a>
+      <a class="btn btn-copper mobile-nav-cta" href="contact.html?type=referral">Make a Referral ↗</a>
+      <a class="btn btn-light mobile-nav-cta" href="tel:1300000000"><i data-lucide="phone" aria-hidden="true"></i> Call 1300 RIGHTFIT</a>
+    </nav>
+  </header>
+

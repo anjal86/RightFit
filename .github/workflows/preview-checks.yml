@@ -12,6 +12,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Check reusable HTML components and generated output
+        run: node tests/check-components.mjs
       - name: Check preview pages and links
         run: node tests/check-static.mjs
       - name: Verify loader plays once with slowed original frames

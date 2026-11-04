@@ -2,16 +2,20 @@
 
 ## Architecture (updated 3 November 2026)
 
-**Single design/content source:** `index.html`, `about.html`, `services.html`, `contact.html`, `styles.css`, `script.js`, and the `assets/` directory.
+**Single design/content source:** `site/pages/{index,about,services,contact}.html` for each page, `site/components/site-header.html` and `site/components/site-footer.html` for the reusable header and footer, plus `styles.css`, `script.js`, and `assets/`.
 
-The four `.html` pages are **the canonical editable frontend**. The PHP pages are now tiny wrappers:
+**Build workflow:** Edit the component or page source, then run `node tools/build-site.mjs`. It generates the four complete root HTML files for both GitHub Pages and the PHP renderer. Commit the generated HTML alongside the source files. `node tools/build-site.mjs --check` (enforced by CI) rejects output that does not match the current components. No runtime frontend framework, browser-side component fetching, or Node server is required.
+
+The header component supports page-aware active desktop/mobile links, referral URL, Services-page utility copy and optional General Enquiry CTA. The footer component contains the service ribbon, oversized phone contact section and the complete footer/navigation. Changes to either component automatically apply to all four pages after building.
+
+The four root `.html` pages are **generated site output**, not separate editable header/footer copies. The PHP pages remain tiny wrappers:
 
 - `index.php` → `rfRenderPage('index')`
 - `about.php` → `rfRenderPage('about')`
 - `services.php` → `rfRenderPage('services')`
 - `contact.php` → `rfRenderPage('contact')`
 
-`includes/render_site.php` reads the same HTML template used by GitHub Pages and provides PHP navigation, canonical URL overrides, session-aware CSRF fields, submission type, PHP checkbox arrays, and escaped flash messages. **There is no longer a separate PHP copy of the design, headings, imagery or service cards.** The old PHP header/footer page templates have been retired.
+`includes/render_site.php` reads the same generated HTML used by GitHub Pages and provides PHP navigation, canonical URL overrides, session-aware CSRF fields, submission type, PHP checkbox arrays, and escaped flash messages. **There is no longer a separate PHP copy of the design, headings, imagery or service cards.** The old PHP header/footer page templates have been retired.
 
 ### What was carried over from the better PHP version
 
