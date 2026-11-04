@@ -22,6 +22,8 @@ jobs:
           npx playwright install chromium
       - name: Verify homepage hero fits common viewport sizes
         run: node tests/check-home-viewport.mjs
+      - name: Verify sticky header on all pages and device widths
+        run: node tests/check-sticky-header.mjs
       - name: Verify photography URLs
         run: node tests/check-photo-urls.mjs
       - name: Verify PHP and HTML share the same page design
